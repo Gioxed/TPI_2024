@@ -5,84 +5,268 @@
     box-sizing: border-box;
 }
 
-/* Estilos generales */
-body {
+
+body{
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
     line-height: 1.6;
+    margin: 80px;
+    margin-top: 80px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
-.container {
+main{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #e86464;
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+.icon__menu{
+    width: 90px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+.user__account {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 70%;
 }
 
-header nav ul li {
-    display: inline;
+.icon__menu i{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.menu__side{
+    width: 90px;
+    height: 100%;
+    background: #c62828;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #b71c1c;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.name__page{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.name__page img, i{
+    width: 40px;
     margin-right: 20px;
 }
 
-header nav ul li a {
+.name__page i{
+    padding-right: 20px;
+}
+
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+}
+
+.options__menu a{
+    color: #ffffffb2;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 300ms;
+}
+
+.options__menu a:hover{
     color: white;
-    text-decoration: none;
-    padding: 5px 10px;
 }
 
-header nav ul li a:hover {
-    background-color: #555;
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-.sidebar {
-    background-color: #c62828;
-    color: white;
-    width: 200px;
-    padding: 20px;
+.options__menu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
 }
 
-.sidebar ul li {
-    margin-bottom: 10px;
+a.selected{
+    color: #fff;
 }
 
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 10%;
+    left: -30px;
 }
 
-.sidebar ul li a:hover {
-    text-decoration: underline;
+
+/*Clases para usar en JavaScript*/
+.body_move{
+    margin-left: 250px;
 }
 
-main {
-    flex: 1;
-    padding: 20px;
+.menu__side_move{
+    width: 250px;
 }
+
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+}
+
 
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/*TABLA DE LAS NOTAS DE LOS ALUMNOS*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #e86464;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/*TABLA DE NOTAS QUE LOS PROFESORES VAN A CARGAR*/
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c62828;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c62828
+}
+
+
+/*MODO OSCURO*/
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+header.dark-mode, .menu__side.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+form.dark-mode {
+    background-color: #2e2e2e;
+    border: 1px solid #444444;
+}
+
+button.dark-mode {
+    background-color: #444444;
+    color: white;
+}
+
+button.dark-mode:hover {
+    background-color: #555555;
 }

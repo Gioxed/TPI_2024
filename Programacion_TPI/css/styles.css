@@ -8,13 +8,20 @@
 }
 
 body{
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #ffd5d5, #ff8a8a);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    background: url("../imagenes/escuela2.jpg") top / cover fixed #0008;
+    filter:background-color(.33);
+}
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: #0006;
+    position: absolute;
 }
 
 .container{
@@ -23,9 +30,10 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 650px;
     max-width: 100%;
-    min-height: 480px;
+    min-height: 400px;
+    left: 250px;
 }
 
 .container p{
