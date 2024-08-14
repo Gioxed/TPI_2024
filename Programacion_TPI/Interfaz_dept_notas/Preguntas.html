@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín Digital - Mensajes</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/preguntas.css">
+</head>
+
+<body>
+
+<!-- MENÚ -->
+<div class="sidebar">
+    <div class="logo_details">
+        <i class="bx bxl-audible icon"></i>
+        <div class="logo_name">Mi Boletín</div>
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+
+    <!-- barra buscadora -->
+    <ul class="nav-list">
+        <li>
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search...">
+            
+        </li>
+
+        <li>
+            <a href="index.html">
+                <i class="bx bx-grid-alt"></i>
+                <span class="link_name">Inicio</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="Mi_cuenta.html">
+                <i class="bx bx-user"></i>
+                <span class="link_name">Mi Cuenta</span>
+            </a>
+        </li>
+        <li>
+            <a href="alumnos.html">
+                <i class="bx bx-user-pin"></i>
+                <span class="link_name">Alumnos</span>
+            </a>
+        </li>
+        <li>
+            <a href="cargar_notas.html">
+                <i class="bx bx-book-content"></i>
+                <span class="link_name">Cargar Notas</span>
+            </a>
+        </li>
+        <li>
+            <a href="cargar_horarios.html">
+                <i class="bx bx-calendar"></i>
+                <span class="link_name">Cargar Horarios</span>
+            </a>
+        </li>
+        <li>
+            <a href="calendario.html">
+                <i class="bx bx-calendar-event"></i>
+                <span class="link_name">Calendario</span>
+            </a>
+        </li>
+        <li>
+            <a href="Preguntas.html">
+                <i class="bx bx-chat"></i>
+                <span class="link_name">Preguntas frecuentes</span>
+            </a>
+        </li>
+        <li>
+            <a href="configuracion.html">
+                <i class="bx bx-cog"></i>
+                <span class="link_name">Configuración</span>
+            </a>
+        </li>
+        <li class="profile">
+            <div class="profile_details">
+                <img src="profile.jpeg" alt="profile image">
+                <div class="profile_content">
+                    <div class="name">Nombre</div>
+                    <div class="designation">Random</div>
+                </div>
+            </div>
+            <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+    </ul>
+</div>
+
+
+<main>
+    <section class="home-section">
+        <div class="text">
+            <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
+            Preguntas Frecuentes
+        </div>
+    </section>
+
+    <section class="home-section">
+        <div class="categorias" id="categorias">
+            <div class="categoria activa" data-categoria="uso">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M12 0c-3.371 2.866-5.484 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 1.292c2.942 2.31 5.12 2.655 8 2.701v10.542c0 3.891-2.638 4.943-8 8.284-5.375-3.35-8-4.414-8-8.284v-10.542c2.88-.046 5.058-.391 8-2.701zm5 7.739l-5.992 6.623-3.672-3.931.701-.683 3.008 3.184 5.227-5.878.728.685z"/>
+                </svg>
+                <p>Uso</p>
+            </div>
+            <div class="categoria" data-categoria="funcionalidad">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M12 0c-3.371 2.866-5.484 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 1.292c2.942 2.31 5.12 2.655 8 2.701v10.542c0 3.891-2.638 4.943-8 8.284-5.375-3.35-8-4.414-8-8.284v-10.542c2.88-.046 5.058-.391 8-2.701zm5 7.739l-5.992 6.623-3.672-3.931.701-.683 3.008 3.184 5.227-5.878.728.685z"/>
+                </svg>
+                <p>Funcionalidad</p>
+            </div>
+            <div class="categoria" data-categoria="soporte">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M12 0c-3.371 2.866-5.484 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 1.292c2.942 2.31 5.12 2.655 8 2.701v10.542c0 3.891-2.638 4.943-8 8.284-5.375-3.35-8-4.414-8-8.284v-10.542c2.88-.046 5.058-.391 8-2.701zm5 7.739l-5.992 6.623-3.672-3.931.701-.683 3.008 3.184 5.227-5.878.728.685z"/>
+                </svg>
+                <p>Soporte</p>
+            </div>
+            <div class="categoria" data-categoria="configuracion">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M12 0c-3.371 2.866-5.484 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 1.292c2.942 2.31 5.12 2.655 8 2.701v10.542c0 3.891-2.638 4.943-8 8.284-5.375-3.35-8-4.414-8-8.284v-10.542c2.88-.046 5.058-.391 8-2.701zm5 7.739l-5.992 6.623-3.672-3.931.701-.683 3.008 3.184 5.227-5.878.728.685z"/>
+                </svg>
+                <p>Configuración</p>
+            </div>
+        </div>
+    
+        <div class="preguntas">
+    
+            <!-- Preguntas Uso -->
+            <div class="contenedor-preguntas activo" data-categoria="uso">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Cómo puedo acceder al boletín digital? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Para acceder al boletín digital, simplemente ingresa con tu cuenta de usuario desde la página principal del boletín. Si no tienes una cuenta, deberás registrarte utilizando tu dirección de correo electrónico.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Qué hago si olvido mi contraseña? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Si olvidas tu contraseña, utiliza la opción "¿Olvidaste tu contraseña?" en la página de inicio de sesión. Se te enviará un enlace para restablecer tu contraseña a tu correo electrónico registrado.</p>
+                </div>
+            </div>
+    
+            <!-- Preguntas Funcionalidad -->
+            <div class="contenedor-preguntas" data-categoria="funcionalidad">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Qué funcionalidades ofrece el boletín digital? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">El boletín digital permite a los usuarios consultar sus notas, visualizar el calendario académico, recibir notificaciones importantes y actualizar su información personal. También ofrece un historial de notas y un seguimiento del progreso académico.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Puedo descargar mi boletín? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Sí, el boletín digital permite descargar tu historial de notas y otros documentos relevantes en formato PDF para su impresión o almacenamiento.</p>
+                </div>
+            </div>
+    
+            <!-- Preguntas Soporte -->
+            <div class="contenedor-preguntas" data-categoria="soporte">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Cómo puedo contactar al soporte técnico? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Puedes contactar al soporte técnico a través del formulario de contacto en la sección de "Ayuda" del boletín digital, o enviando un correo electrónico a soporte@boletindigital.com.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Qué hago si encuentro un error en el boletín? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Si encuentras un error en el boletín, por favor infórmanos a través del formulario de contacto o del correo electrónico de soporte. Nos aseguraremos de corregir el problema lo antes posible.</p>
+                </div>
+            </div>
+    
+            <!-- Preguntas Configuración -->
+            <div class="contenedor-preguntas" data-categoria="configuracion">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Cómo actualizo mis datos personales? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Para actualizar tus datos personales, ve a la sección "Mi Cuenta" en el menú del boletín digital y selecciona la opción para editar tu perfil.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Cómo cambio mi dirección de correo electrónico? <img src="../imagenes/suma.svg" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Para cambiar tu dirección de correo electrónico, accede a la sección "Configuración" dentro de "Mi Cuenta" y actualiza tu dirección de correo electrónico. Se te enviará un enlace de verificación para confirmar el cambio.</p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    
+	</main>
+
+	<script src="../js/categorias.js"></script>
+	<script src="../js/preguntas.js"></script>
+    </section>
+</main>
+
+
+
+
+<!--::::Pie de Pagina::::::-->
+<footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="../imagenes/logo_empresa.png" alt="Logo UniTeq">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+        </div>
+        <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-github"></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>UniTeq Innovate</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+
+<script src="../js/index.js"></script>
+
+</body>

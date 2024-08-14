@@ -6,17 +6,10 @@
     <title>Boletín Digital - Cargar Notas</title>
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/cargar_notas.css">
 </head>
 
 <body>
-        <header>
-            <section class="home-section">
-                <div class="text">
-                    <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-                    Cargar Notas
-                </div>
-            </section>
-        </header>
     
         <!-- MENÚ -->
         <div class="sidebar">
@@ -27,106 +20,127 @@
             </div>
     
             <!-- barra buscadora -->
-            <ul class="nav-list">
-                <li>
-                    <i class="bx bx-search"></i>
-                    <input type="text" placeholder="Search...">
-                    <span class="tooltip">Search</span>
-                </li>
-    
-                <li>
-                    <a href="index.html">
-                        <i class="bx bx-grid-alt"></i>
-                        <span class="link_name">Inicio</span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="Mi_cuenta.html">
-                        <i class="bx bx-user"></i>
-                        <span class="link_name">Mi Cuenta</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="mensajes.html">
-                        <i class="bx bx-chat"></i>
-                        <span class="link_name">Mensajes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="alumnos.html">
-                        <i class="bx bx-user-pin"></i>
-                        <span class="link_name">Alumnos</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="cargar_notas.html">
-                        <i class="bx bx-book-content"></i>
-                        <span class="link_name">Cargar Notas</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="cargar_horarios.html">
-                        <i class="bx bx-calendar"></i>
-                        <span class="link_name">Cargar Horarios</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="calendario.html">
-                        <i class="bx bx-calendar-event"></i>
-                        <span class="link_name">Calendario</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="configuracion.html">
-                        <i class="bx bx-cog"></i>
-                        <span class="link_name">Configuración</span>
-                    </a>
-                </li>
-                <li class="profile">
-                    <div class="profile_details">
-                        <img src="profile.jpeg" alt="profile image">
-                        <div class="profile_content">
-                            <div class="name">Anna Jhon</div>
-                            <div class="designation">Admin</div>
-                        </div>
+        <ul class="nav-list">
+            <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="Search...">
+                
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="link_name">Inicio</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="Mi_cuenta.html">
+                    <i class="bx bx-user"></i>
+                    <span class="link_name">Mi Cuenta</span>
+                </a>
+            </li>
+            <li>
+                <a href="alumnos.html">
+                    <i class="bx bx-user-pin"></i>
+                    <span class="link_name">Alumnos</span>
+                </a>
+            </li>
+            <li>
+                <a href="cargar_notas.html">
+                    <i class="bx bx-book-content"></i>
+                    <span class="link_name">Cargar Notas</span>
+                </a>
+            </li>
+            <li>
+                <a href="cargar_horarios.html">
+                    <i class="bx bx-calendar"></i>
+                    <span class="link_name">Cargar Horarios</span>
+                </a>
+            </li>
+            <li>
+                <a href="calendario.html">
+                    <i class="bx bx-calendar-event"></i>
+                    <span class="link_name">Calendario</span>
+                </a>
+            </li>
+            <li>
+                <a href="Preguntas.html">
+                    <i class="bx bx-chat"></i>
+                    <span class="link_name">Preguntas frecuentes</span>
+                </a>
+            </li>
+            <li>
+                <a href="configuracion.html">
+                    <i class="bx bx-cog"></i>
+                    <span class="link_name">Configuración</span>
+                </a>
+            </li>
+            <li class="profile">
+                <div class="profile_details">
+                    <img src="profile.jpeg" alt="profile image">
+                    <div class="profile_content">
+                        <div class="name">Nombre</div>
+                        <div class="designation">Random</div>
                     </div>
-                    <i class="bx bx-log-out" id="log_out"></i>
-                </li>
-            </ul>
-        </div>
+                </div>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+
     
 
         <main>
+            <section class="home-section">
+                <div class="text">
+                    <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
+                        Cargar Notas
+                </div>
+            </section>
+
             <section>
-                <h1>Cargar Notas</h1>
-                <form id="cargarNotasForm">
-                    <label for="materia">Materia:</label>
-                    <select id="materia" name="materia">
-                        <option value="matematicas">Matemáticas</option>
-                        <option value="ciencias">Ciencias</option>
-                        <option value="historia">Historia</option>
-                        <!-- Agregar más materias según sea necesario -->
-                    </select>
-        
-                    <label for="alumno">Alumno:</label>
-                    <select id="alumno" name="alumno">
-                        <option value="alumno1">Alumno 1</option>
-                        <option value="alumno2">Alumno 2</option>
-                        <option value="alumno3">Alumno 3</option>
-                        <!-- Agregar más alumnos según sea necesario -->
-                    </select>
-        
-                    <label for="nota">Nota:</label>
-                    <input type="number" id="nota" name="nota" min="1" max="10" required>
-        
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-        
-                    <button type="submit">Cargar Nota</button>
-                </form>
+                <div class="container">
+                    <h2>Cargar Notas</h2>
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Matemáticas</th>
+                                <th>Lengua</th>
+                                <th>Ciencias</th>
+                                <th>Historia</th>
+                                <th>Geografía</th>
+                                <!-- Puedes agregar más columnas según sea necesario -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juan Pérez</td>
+                                <td><input type="text" value="8"></td>
+                                <td><input type="text" value="7"></td>
+                                <td><input type="text" value="9"></td>
+                                <td><input type="text" value="6"></td>
+                                <td><input type="text" value="8"></td>
+                            </tr>
+                            <tr>
+                                <td>Ana García</td>
+                                <td><input type="text" value="9"></td>
+                                <td><input type="text" value="8"></td>
+                                <td><input type="text" value="7"></td>
+                                <td><input type="text" value="9"></td>
+                                <td><input type="text" value="8"></td>
+                            </tr>
+                            <!-- Más filas para otros alumnos -->
+                        </tbody>
+                    </table>
+                    <button type="submit" class="save-btn">Guardar Cambios</button>
+                </div>
+                
+                
             </section>
         </main>
+
         
 
         <!--::::Pie de Pagina::::::-->
@@ -135,7 +149,7 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="#" alt="Logo UniTeq">
+                        <img src="../imagenes/logo_empresa.png" alt="Logo UniTeq">
                     </a>
                 </figure>
             </div>

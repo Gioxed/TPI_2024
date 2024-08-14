@@ -6,11 +6,18 @@
     <title>Boletín Digital - Sistema de Carga de Notas</title>
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/carusel.css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+7
     <!-- MENÚ -->
     <div class="sidebar">
         <div class="logo_details">
@@ -41,12 +48,6 @@
                 </a>
             </li>
             <li>
-                <a href="mensajes.html">
-                    <i class="bx bx-chat"></i>
-                    <span class="link_name">Mensajes</span>
-                </a>
-            </li>
-            <li>
                 <a href="alumnos.html">
                     <i class="bx bx-user-pin"></i>
                     <span class="link_name">Alumnos</span>
@@ -71,6 +72,12 @@
                 </a>
             </li>
             <li>
+                <a href="Preguntas.html">
+                    <i class="bx bx-chat"></i>
+                    <span class="link_name">Preguntas frecuentes</span>
+                </a>
+            </li>
+            <li>
                 <a href="configuracion.html">
                     <i class="bx bx-cog"></i>
                     <span class="link_name">Configuración</span>
@@ -80,8 +87,8 @@
                 <div class="profile_details">
                     <img src="profile.jpeg" alt="profile image">
                     <div class="profile_content">
-                        <div class="name">Anna Jhon</div>
-                        <div class="designation">Admin</div>
+                        <div class="name">Nombre</div>
+                        <div class="designation">Random</div>
                     </div>
                 </div>
                 <i class="bx bx-log-out" id="log_out"></i>
@@ -94,15 +101,71 @@
         <section class="home-section">
             <div class="text">
                 <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-                Inicio
+                <h1>Bienvenido al Boletín Digital</h1>
             </div>
 
-            <h1>Bienvenido al Boletín Digital</h1>
             <p>Aquí podrás cargar y consultar las notas de los alumnos.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate laboriosam officia tempora ea tempore quia qui delectus quisquam amet, sed inventore, sunt commodi nostrum sit vero aut similique, tenetur provident. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit rem obcaecati ad harum ut numquam ea quaerat, molestiae error? Odio rem, natus ab quidem nam corporis eaque in corrupti praesentium! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis non temporibus odit adipisci tempora molestias earum obcaecati, quis nulla eaque, recusandae debitis assumenda est aspernatur quibusdam autem neque quo.
+                Nuestro sistema de gestión escolar está diseñado para simplificar y mejorar la forma en que los alumnos y el personal académico interactúan con las notas y la información académica. Aquí te explicamos brevemente cómo funciona:
+
+Para los Alumnos:
+Registro Seguro: Solo los alumnos matriculados en nuestra institución pueden registrarse. Usamos un sistema de verificación que garantiza la autenticidad de los registros.
+Acceso a Notas: Los alumnos pueden acceder de manera fácil y rápida a sus calificaciones desde cualquier dispositivo, en cualquier momento.
+Consulta de Horarios y Calendarios: Mantente al día con tus clases y eventos importantes, todo en un solo lugar.
+Gestión de Cuenta: Actualiza tu información personal y controla la seguridad de tu cuenta desde la sección "Mi Cuenta".
+Para el Personal Académico:
+Carga de Notas: Los profesores pueden subir las calificaciones de los alumnos de manera sencilla y segura.
+Gestión de Materias: Organiza y administra las asignaturas y el rendimiento de los alumnos con nuestras herramientas integradas.
+Comunicación Directa: Envía y recibe mensajes de los alumnos, facilitando una comunicación fluida dentro del entorno académico.
+Seguridad y Privacidad:
+Protección de Datos: Todos los datos están protegidos con las más estrictas medidas de seguridad.
+Acceso Controlado: Solo usuarios autorizados pueden acceder a la información relevante, garantizando la privacidad de los datos personales y académicos.
+Nuestro objetivo es ofrecerte una experiencia fluida y segura, ayudándote a enfocarte en lo que realmente importa: tu educación.
             </p>
         </section>
+
+        <section class="home-section">
+        <div class="container swiper">
+            <div class="slide-container">
+               <div class="card-wrapper swiper-wrapper">
+                <div class="card swiper-slide">
+                  <div class="image-box">
+                    <img src="../imagenes/escuela2.jpg" alt="" />
+                  </div>
+
+                </div>
+                <div class="card swiper-slide">
+                  <div class="image-box">
+                    <img src="../imagenes/escuela2.jpg" alt="" />
+                  </div>
+                  
+                </div>
+                <div class="card swiper-slide">
+                  <div class="image-box">
+                    <img src="../imagenes/escuela2.jpg" alt="" />
+                  </div>
+                
+                </div>
+                <div class="card swiper-slide">
+                  <div class="image-box">
+                    <!--<img src="images/showImg/appDev.jpg" alt="" />-->
+                  </div>
+                
+                </div>
+                <div class="card swiper-slide">
+                  <div class="image-box">
+                    <!--<img src="images/showImg/blogger.jpg" alt="" />-->
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
     </main>
+    
 
     <!--::::Pie de Pagina::::::-->
     <footer class="pie-pagina">
@@ -110,7 +173,7 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="#" alt="Logo UniTeq">
+                        <img src="../imagenes/logo_empresa.png" alt="Logo UniTeq">
                     </a>
                 </figure>
             </div>
@@ -134,6 +197,7 @@
     </footer>
 
     <script src="../js/index.js"></script>
+    <script src="../js/carusel.js"></script>
 </body>
 </html>
 

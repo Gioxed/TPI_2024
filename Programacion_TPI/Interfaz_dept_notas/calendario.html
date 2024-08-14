@@ -10,14 +10,6 @@
 
 <body>
 
-<header>
-    <section class="home-section">
-        <div class="text">
-            <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-            Calendario
-        </div>
-    </section>
-</header>
 
 <!-- MENÚ -->
 <div class="sidebar">
@@ -32,7 +24,7 @@
         <li>
             <i class="bx bx-search"></i>
             <input type="text" placeholder="Search...">
-            <span class="tooltip">Search</span>
+            
         </li>
 
         <li>
@@ -43,15 +35,9 @@
         </li>
 
         <li>
-            <a href="Mi-cuenta.html">
+            <a href="Mi_cuenta.html">
                 <i class="bx bx-user"></i>
                 <span class="link_name">Mi Cuenta</span>
-            </a>
-        </li>
-        <li>
-            <a href="mensajes.html">
-                <i class="bx bx-chat"></i>
-                <span class="link_name">Mensajes</span>
             </a>
         </li>
         <li>
@@ -79,6 +65,12 @@
             </a>
         </li>
         <li>
+            <a href="Preguntas.html">
+                <i class="bx bx-chat"></i>
+                <span class="link_name">Preguntas frecuentes</span>
+            </a>
+        </li>
+        <li>
             <a href="configuracion.html">
                 <i class="bx bx-cog"></i>
                 <span class="link_name">Configuración</span>
@@ -88,8 +80,8 @@
             <div class="profile_details">
                 <img src="profile.jpeg" alt="profile image">
                 <div class="profile_content">
-                    <div class="name">Anna Jhon</div>
-                    <div class="designation">Admin</div>
+                    <div class="name">Nombre</div>
+                    <div class="designation">Random</div>
                 </div>
             </div>
             <i class="bx bx-log-out" id="log_out"></i>
@@ -98,19 +90,72 @@
 </div>
 
 
+
+<main>
+    <section class="home-section">
+        <div class="text">
+            <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
+            Calendario
+        </div>
+
+        <div class="contianer">
+            <div class="calendar">
+                <div class="calendar-header">
+                <span class="month-picker" id="month-picker"> Mayo </span>
+                <div class="year-picker" id="year-picker">
+                    <span class="year-change" id="pre-year">
+                    <pre><</pre>
+                  </span>
+                  <span id="year">2024 </span>
+                  <span class="year-change" id="next-year">
+                    <pre>></pre>
+                  </span>
+                </div>
+              </div>
+        
+              <div class="calendar-body">
+                <div class="calendar-week-days">
+                  <div>Dom</div>
+                  <div>Lun</div>
+                  <div>Mar</div>
+                  <div>Miér</div>
+                  <div>Jue</div>
+                  <div>Vie</div>
+                  <div>Sáb</div>
+                </div>
+                <div class="calendar-days">
+                </div>
+              </div>
+              <div class="calendar-footer">
+              </div>
+              <div class="date-time-formate">
+                <div class="day-text-formate">HOY</div>
+                <div class="date-time-value">
+                  <div class="time-formate">01:41:20</div>
+                  <div class="date-formate">03 - marzo - 2024</div>
+                </div>
+              </div>
+              <div class="month-list"></div>
+            </div>
+          </div>
+    </section>
+    
+</main>
+
+
 <!--::::Pie de Pagina::::::-->
+
 <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
             <figure>
                 <a href="#">
-                    <img src="#" alt="Logo UniTeq">
+                    <img src="../imagenes/logo_empresa.png" alt="Logo UniTeq">
                 </a>
             </figure>
         </div>
         <div class="box">
             <h2>SOBRE NOSOTROS</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
         </div>
         <div class="box">
@@ -128,6 +173,7 @@
     </div>
 </footer>
 
+<script src="../js/calendario.js"></script>
 <script src="../js/index.js"></script>
 
 </body>

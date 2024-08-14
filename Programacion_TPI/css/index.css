@@ -270,124 +270,431 @@ header {
     width: 50px;
     background: none;
   }
+
+  /*:::::FIN MENÚ*/
   
   /* Sección principal */
-  .home-section {
-    position: relative;
-    background-color: #e4e9f7;
-    min-height: 100vh;
-    top: 0;
-    left: 78px;
-    width: calc(100% - 78px);
-    transition: all 0.5s ease;
-    z-index: 2;
-    }
+.home-section {
+  position: relative;
+  background-color: #e4e9f7;
+  min-height: 100px;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+  padding: 20px; /* Añade un padding para separación del borde */
 
-    .home-section .text {
-    display: inline-block;
-    color: #a2231d;
-    font-size: 25px;
-    font-weight: 500;
-    margin: 18px;
-    }
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Contenedor para el texto y logo */
+.home-section .header {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre el logo y el título */
+}
+
+.home-section .text {
+  color: #a2231d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0; /* Elimina el margen para mejor alineación */
+}
+
+/* Estilos para el logo */
+.home-section .logo {
+  height: 50px; /* Ajusta la altura según sea necesario */
+  width: auto;
+}
+
+    
 
 .sidebar.open ~ main .home-section {
     left: 250px;
     width: calc(100% - 250px);
     }
 
-    /*:::::FIN MENÚ*/
 
 
-
-/*:::::Pie de Pagina*/
+/*::::: Pie de Página */
 footer {
-    background-color: #2e2e2e;;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    position: relative;
-    width: 100%;
-    transition: right 0.5s ease;
+  background-color: #020f1f;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  position: relative;
+  width: 100%;
+  transition: right 0.5s ease;
+  margin-top: auto; /* Empuja el footer al fondo */
 }
 
 .pie-pagina .grupo-1{
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
-    padding: 25px 0px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 50px;
+  padding: 25px 0px;
 }
+
 .pie-pagina .grupo-1 .box figure{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .pie-pagina .grupo-1 .box figure img{
-    width: 200px;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
 }
+
 .pie-pagina .grupo-1 .box h2{
-    color: #fff;
-    margin-bottom: 25px;
-    font-size: 20px;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
 }
+
 .pie-pagina .grupo-1 .box p{
-    color: #d3d3d3;
-    margin-bottom: 10px;
+  color: #d3d3d3;
+  margin-bottom: 10px;
 }
+
 .pie-pagina .grupo-1 .red-social a{
-    display: inline-block;
-    text-decoration: none;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    color: #fff;
-    margin-right: 10px;
-    background-color: #4f4f4f;
-    text-align: center;
-    transition: all 300ms ease;
+  display: inline-block;
+  text-decoration: none;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  margin-right: 5px;
+  background-color: #4f4f4f;
+  text-align: center;
+  transition: all 300ms ease;
 }
+
 .pie-pagina .grupo-1 .red-social a:hover{
-    color: #c62828;
+  color: #c62828;
 }
+
 .pie-pagina .grupo-2{
-    background-color: #3a3a3a;
-    padding: 15px 10px;
-    text-align: center;
-    color: #fff;
+  background-color: #3a3a3a;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
 }
+
 .pie-pagina .grupo-2 small{
   font-size: 14px;
   color: #d3d3d3; /* Texto gris claro */
 }
 
-.sidebar.open ~ footer {
-  left: 250px;
-  width: calc(100% - 250px);
+@media screen and (max-width: 760px) {
+  .pie-pagina .grupo-1 {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
   }
 
-@media screen and (max-width:800px){
-    .pie-pagina .grupo-1{
-        width: 90%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
-        padding: 20px 0px;
-    }
+  .pie-pagina .grupo-1 .box h2 {
+      font-size: 18px;
+  }
+
+  .pie-pagina .grupo-1 .red-social a {
+      margin-right: 10px;
+  }
 }
 
-@media screen and (max-width: 760px){
-    .body_move{
-        margin-left: 0px;
-    }
+/*CALENDARIO*/
 
-    .menu__side_move{
-        width: 80px;
-        left: -80px;
-    }
+.calendar {
+  height: 30rem;
+  width: max-content;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 35px 50px 0px 50px;
+}
+
+.calendar {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.calendar-header {
+  background: #a2231d;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 7px;
+  align-items: center;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.calendar-body {
+  padding: 10px;
+}
+
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(104, 104, 104);
+}
+
+.calendar-week-days div:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: all .2s ease-in-out;
+}
+
+.calendar-week-days div {
+  display: grid;
+  place-items: center;
+  color: #a2231d;
+  height: 50px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: #0A0921;
+}
+
+.calendar-days div {
+  width: 37px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  animation: to-top 1s forwards;
+}
+
+.month-picker {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.year-picker {
+  display: flex;
+  align-items: center;
+}
+
+.year-change {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.year-change:hover {
+  background-color: #c62828;
+  transition: all .2s ease-in-out;
+  transform: scale(1.12);
+}
+
+.calendar-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#year:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.2 ease-in-out;
+}
+
+.calendar-days div span {
+  position: absolute;
+}
+
+.calendar-days div:hover {
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background-color: #fbc7d4;
+  border-radius: 20%;
+  color: #f8fbff;
+}
+
+.calendar-days div.current-date {
+  color: #f8fbff;
+  background-color: #c62828;
+  border-radius: 20%;
+}
+
+.month-list {
+  position: relative;
+  left: 0;
+  top: -130px;
+  background-color: #ebebeb;
+  color: #151426;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+  border-radius: 20px;
+}
+
+.month-list>div {
+  display: grid;
+  place-content: center;
+  margin: 5px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.month-list>div>div {
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.month-list>div>div:hover {
+  background-color: #c62828;
+  color: #f8fbff;
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+.month-list.show {
+  visibility: visible;
+  pointer-events: visible;
+  transition: 0.6s ease-in-out;
+  animation: to-left .71s forwards;
+}
+
+.month-list.hideonce {
+  visibility: hidden;
+}
+
+.month-list.hide {
+  animation: to-right 1s forwards;
+  visibility: none;
+  pointer-events: none;
+}
+
+.date-time-formate {
+  height: 4rem;
+  width: 100%;
+  font-family: Dubai Light, Century Gothic;
+  position: relative;
+  display: flex;
+  top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-text-formate {
+  font-family: Microsoft JhengHei UI;
+  font-size: 1.4rem;
+  padding-right: 5%;
+  border-right: 3px solid #c62828;
+}
+
+.date-time-value {
+  display: block;
+  position: relative;
+  text-align: center;
+  padding-left: 5%;
+}
+
+.time-formate {
+  font-size: 1.5rem;
+}
+
+.time-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.day-text-formate.hidetime {
+  animation: hidetime 1.5s forwards;
+}
+
+.date-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.day-text-formate.showtime {
+  animation: showtime 1s forwards;
+}
+
+.time-formate.showtime {
+  animation: showtime 1s forwards;
+}
+
+.date-formate.showtime {
+  animation: showtime 1s forwards;
+}
+
+@keyframes to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes to-left {
+  0% {
+    transform: translatex(230%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+
+@keyframes to-right {
+  10% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(-150%);
+    opacity: 1;
+  }
+}
+
+@keyframes showtime {
+  0% {
+    transform: translatex(250%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes hidetime {
+  0% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translatex(-370%);
+    opacity: 1;
+  }
 }
 
 
@@ -420,67 +727,4 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #ddd;
-}
-
-/*TABLA DE NOTAS QUE LOS PROFESORES VAN A CARGAR*/
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-label {
-    margin-top: 10px;
-}
-
-input, select {
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #c62828;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #c62828
-}
-
-
-/*MODO OSCURO*/
-body.dark-mode {
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-
-header.dark-mode, .menu__side.dark-mode {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-form.dark-mode {
-    background-color: #2e2e2e;
-    border: 1px solid #444444;
-}
-
-button.dark-mode {
-    background-color: #444444;
-    color: white;
-}
-
-button.dark-mode:hover {
-    background-color: #555555;
 }
