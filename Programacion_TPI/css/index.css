@@ -322,24 +322,22 @@ footer {
   background-color: #020f1f;
   color: #fff;
   text-align: center;
-  padding: 5px 0;
-  position: relative;
+  padding: 20px 0;
   width: 100%;
-  transition: right 0.5s ease;
-  margin-top: auto; /* Empuja el footer al fondo */
+  margin-top: auto;
 }
 
-.pie-pagina .grupo-1{
+.pie-pagina .grupo-1 {
   width: 100%;
   max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 50px;
-  padding: 25px 0px;
+  padding: 25px 0;
 }
 
-.pie-pagina .grupo-1 .box figure{
+.pie-pagina .grupo-1 .box figure {
   width: 100%;
   height: 100%;
   display: flex;
@@ -347,24 +345,25 @@ footer {
   align-items: center;
 }
 
-.pie-pagina .grupo-1 .box figure img{
+.pie-pagina .grupo-1 .box figure img {
   width: 100%;
   max-width: 180px;
   height: auto;
 }
 
-.pie-pagina .grupo-1 .box h2{
+.pie-pagina .grupo-1 .box h2 {
   color: #fff;
   margin-bottom: 25px;
-  font-size: 20px;
+  font-size: 22px; /* Aumenta un poco el tamaño de la fuente */
 }
 
-.pie-pagina .grupo-1 .box p{
+.pie-pagina .grupo-1 .box p {
   color: #d3d3d3;
   margin-bottom: 10px;
+  font-size: 16px; /* Ajuste de fuente */
 }
 
-.pie-pagina .grupo-1 .red-social a{
+.pie-pagina .grupo-1 .red-social a {
   display: inline-block;
   text-decoration: none;
   width: 35px;
@@ -375,38 +374,63 @@ footer {
   background-color: #4f4f4f;
   text-align: center;
   transition: all 300ms ease;
+  border-radius: 50%; /* Añadimos bordes redondeados */
 }
 
-.pie-pagina .grupo-1 .red-social a:hover{
+.pie-pagina .grupo-1 .red-social a:hover {
   color: #c62828;
 }
 
-.pie-pagina .grupo-2{
+.pie-pagina .grupo-2 {
   background-color: #3a3a3a;
   padding: 15px 10px;
   text-align: center;
   color: #fff;
 }
 
-.pie-pagina .grupo-2 small{
+.pie-pagina .grupo-2 small {
   font-size: 14px;
-  color: #d3d3d3; /* Texto gris claro */
+  color: #d3d3d3;
 }
 
+/* Responsivo: Ajustes para pantallas pequeñas */
 @media screen and (max-width: 760px) {
   .pie-pagina .grupo-1 {
-      grid-template-columns: 1fr;
-      grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 15px 0;
   }
 
   .pie-pagina .grupo-1 .box h2 {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .pie-pagina .grupo-1 .red-social a {
-      margin-right: 10px;
+    margin-right: 10px;
+  }
+
+  .pie-pagina .grupo-1 .box p {
+    font-size: 14px; /* Disminuye el tamaño en pantallas pequeñas */
   }
 }
+
+/* Responsivo: Ajustes para pantallas grandes */
+@media screen and (min-width: 1200px) {
+  .pie-pagina .grupo-1 .box h2 {
+    font-size: 24px; /* Texto más grande en pantallas grandes */
+  }
+
+  .pie-pagina .grupo-1 .box p {
+    font-size: 18px;
+  }
+
+  .pie-pagina .grupo-1 .red-social a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
 
 /*CALENDARIO*/
 
