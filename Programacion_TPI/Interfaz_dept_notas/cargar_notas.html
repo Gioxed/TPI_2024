@@ -41,12 +41,6 @@
                 </a>
             </li>
             <li>
-                <a href="alumnos.html">
-                    <i class="bx bx-user-pin"></i>
-                    <span class="link_name">Alumnos</span>
-                </a>
-            </li>
-            <li>
                 <a href="cargar_notas.html">
                     <i class="bx bx-book-content"></i>
                     <span class="link_name">Cargar Notas</span>
@@ -68,12 +62,6 @@
                 <a href="Preguntas.html">
                     <i class="bx bx-chat"></i>
                     <span class="link_name">Preguntas frecuentes</span>
-                </a>
-            </li>
-            <li>
-                <a href="configuracion.html">
-                    <i class="bx bx-cog"></i>
-                    <span class="link_name">Configuración</span>
                 </a>
             </li>
             <li class="profile">
@@ -98,45 +86,350 @@
                 Cargar Notas
             </div>
         </section>
-    
+
+        
+        
+
         <section class="home-section">
+            <div class="tabs">
+                <button class="tablink" onclick="openTab('7mo1')">7mo 1ra</button>
+                <button class="tablink" onclick="openTab('7mo2')">7mo 2da</button>
+                <button class="tablink" onclick="openTab('7mo3')">7mo 3ra</button>
+            </div>
+
+<div id="7mo1" class="tabcontent">
             <div class="grades-container">
-                <table class="grades-table">
-                    <thead>
-                        <tr>
-                            <th>Alumno</th>
-                            <th>Matemática</th>
-                            <th>Inglés</th>
-                            <th>Marco Jurídi.</th>
-                            <th>Asistencia 2</th>
-                            <th>Autogestión.</th>
-                            <th>Hardware 4</th>
-                            <th>Pract.</th>
-                            <th>Programación 4</th>
-                            <th>Redes 3</th>
-                            <th>EDI: Ard.</th>
-                        </tr>
-                    </thead>
+                <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
                     <tbody>
-                        <tr>
-                            <td data-label="Alumno">Alumno</td>
-                            <td data-label="Matemática"><input type="text"></td>
-                            <td data-label="Inglés"><input type="text"></td>
-                            <td data-label="Marco Jurí."><input type="text"></td>
-                            <td data-label="Asistencia"><input type="text"></td>
-                            <td data-label="Autogestión"><input type="text"></td>
-                            <td data-label="Hardware"><input type="text"></td>
-                            <td data-label="Practicas p."><input type="text"></td>
-                            <td data-label="Program."><input type="text"></td>
-                            <td data-label="Redes 3"><input type="text"></td>
-                            <td data-label="EDI: Arduino"><input type="text"></td>
+                        <tr class="row0">
+                            <td class="column0 style1 s">Apellido y Nombre:</td>
+                            <td class="column1 style2 s" colspan="5">
+                                <input type="text" name="nombre" value="SUchiNI, pablito">
+                            </td>
+                            <td class="column6 style3 s">Curso:</td>
+                                
+                            <td class="column2 style5 s" colspan="7">7° 1° Técnica</td>
                         </tr>
+                        <tr class="row1">
+                            <td class="column0 style4 s" colspan="2">Ciclo Superior de la ESO</td>
+                            <td class="column2 style5 s">Matemática</td>
+                            <td class="column3 style5 s">Inglés técnico</td>
+                            <td class="column4 style5 s">Marco jurídico y derechos del trabajo</td>
+                            <td class="column5 style5 s">TÉCNICA: Asistencia 2</td>
+                            <td class="column6 style5 s">TÉCNICA: Autogestión</td>
+                            <td class="column7 style5 s">TÉCNICA: Hardware 4</td>
+                            <td class="column8 style5 s">TÉCNICA: Prácticas Profesionalizantes 2</td>
+                            <td class="column9 style5 s">TÉCNICA: Programacion</td>
+                            <td class="column10 style5 s">TÉCNICA: Redes 3</td>
+                            <td class="column11 style5 s">EDI: Arduino 3</td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="column0 style6 s" rowspan="3">1° Cuatrimestre</td>
+                            <td class="column1 style7 s">1° Informe</td>
+                            <td class="column2 style8">
+                                <input type="text" name="matematica_1_1">
+                            </td>
+                            <td class="column3 style8">
+                                <input type="text" name="ingles_1_1">
+                            </td>
+                            <td class="column4 style8">
+                                <input type="text" name="marco_1_1">
+                            </td>
+                            <td class="column5 style8">
+                                <input type="text" name="tecnica_asistencia_1_1">
+                            </td>
+                            <td class="column6 style8">
+                                <input type="text" name="tecnica_autogestion_1_1">
+                            </td>
+                            <td class="column7 style8">
+                                <input type="text" name="tecnica_hardware_1_1">
+                            </td>
+                            <td class="column8 style8">
+                                <input type="text" name="tecnica_practicas_1_1">
+                            </td>
+                            <td class="column9 style8">
+                                <input type="text" name="tecnica_programacion_1_1">
+                            </td>
+                            <td class="column10 style8">
+                                <input type="text" name="tecnica_redes_1_1">
+                            </td>
+                            <td class="column11 style8">
+                                <input type="text" name="edi_arduino_1_1">
+                            </td>
+                        </tr>
+                        
+                        <td class="column1 style7 s">2° Informe</td>
+                            <td class="column2 style8">
+                                <input type="text" name="matematica_1_1">
+                            </td>
+                            <td class="column3 style8">
+                                <input type="text" name="ingles_1_1">
+                            </td>
+                            <td class="column4 style8">
+                                <input type="text" name="marco_1_1">
+                            </td>
+                            <td class="column5 style8">
+                                <input type="text" name="tecnica_asistencia_1_1">
+                            </td>
+                            <td class="column6 style8">
+                                <input type="text" name="tecnica_autogestion_1_1">
+                            </td>
+                            <td class="column7 style8">
+                                <input type="text" name="tecnica_hardware_1_1">
+                            </td>
+                            <td class="column8 style8">
+                                <input type="text" name="tecnica_practicas_1_1">
+                            </td>
+                            <td class="column9 style8">
+                                <input type="text" name="tecnica_programacion_1_1">
+                            </td>
+                            <td class="column10 style8">
+                                <input type="text" name="tecnica_redes_1_1">
+                            </td>
+                            <td class="column11 style8">
+                                <input type="text" name="edi_arduino_1_1">
+                            </td>
+                        </tr>
+                        <td class="column1 style7 s">NOTA</td>
+                            <td class="column2 style8">
+                                <input type="text" name="matematica_1_1">
+                            </td>
+                            <td class="column3 style8">
+                                <input type="text" name="ingles_1_1">
+                            </td>
+                            <td class="column4 style8">
+                                <input type="text" name="marco_1_1">
+                            </td>
+                            <td class="column5 style8">
+                                <input type="text" name="tecnica_asistencia_1_1">
+                            </td>
+                            <td class="column6 style8">
+                                <input type="text" name="tecnica_autogestion_1_1">
+                            </td>
+                            <td class="column7 style8">
+                                <input type="text" name="tecnica_hardware_1_1">
+                            </td>
+                            <td class="column8 style8">
+                                <input type="text" name="tecnica_practicas_1_1">
+                            </td>
+                            <td class="column9 style8">
+                                <input type="text" name="tecnica_programacion_1_1">
+                            </td>
+                            <td class="column10 style8">
+                                <input type="text" name="tecnica_redes_1_1">
+                            </td>
+                            <td class="column11 style8">
+                                <input type="text" name="edi_arduino_1_1">
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="column0 style6 s" rowspan="3">2° Cuatrimestre</td>
+                            <td class="column1 style7 s">1° Informe</td>
+                            <td class="column2 style8">
+                                <input type="text" name="matematica_1_1">
+                            </td>
+                            <td class="column3 style8">
+                                <input type="text" name="ingles_1_1">
+                            </td>
+                            <td class="column4 style8">
+                                <input type="text" name="marco_1_1">
+                            </td>
+                            <td class="column5 style8">
+                                <input type="text" name="tecnica_asistencia_1_1">
+                            </td>
+                            <td class="column6 style8">
+                                <input type="text" name="tecnica_autogestion_1_1">
+                            </td>
+                            <td class="column7 style8">
+                                <input type="text" name="tecnica_hardware_1_1">
+                            </td>
+                            <td class="column8 style8">
+                                <input type="text" name="tecnica_practicas_1_1">
+                            </td>
+                            <td class="column9 style8">
+                                <input type="text" name="tecnica_programacion_1_1">
+                            </td>
+                            <td class="column10 style8">
+                                <input type="text" name="tecnica_redes_1_1">
+                            </td>
+                            <td class="column11 style8">
+                                <input type="text" name="edi_arduino_1_1">
+                            </td>
+                        </tr>
+                        
+                        <td class="column1 style7 s">2° Informe</td>
+                            <td class="column2 style8">
+                                <input type="text" name="matematica_1_1">
+                            </td>
+                            <td class="column3 style8">
+                                <input type="text" name="ingles_1_1">
+                            </td>
+                            <td class="column4 style8">
+                                <input type="text" name="marco_1_1">
+                            </td>
+                            <td class="column5 style8">
+                                <input type="text" name="tecnica_asistencia_1_1">
+                            </td>
+                            <td class="column6 style8">
+                                <input type="text" name="tecnica_autogestion_1_1">
+                            </td>
+                            <td class="column7 style8">
+                                <input type="text" name="tecnica_hardware_1_1">
+                            </td>
+                            <td class="column8 style8">
+                                <input type="text" name="tecnica_practicas_1_1">
+                            </td>
+                            <td class="column9 style8">
+                                <input type="text" name="tecnica_programacion_1_1">
+                            </td>
+                            <td class="column10 style8">
+                                <input type="text" name="tecnica_redes_1_1">
+                            </td>
+                            <td class="column11 style8">
+                                <input type="text" name="edi_arduino_1_1">
+                            </td>
+                        </tr>
+                        <td class="column1 style7 s">NOTA</td>
+                            <td class="column2 style8">
+                                <input type="text" name="matematica_1_1">
+                            </td>
+                            <td class="column3 style8">
+                                <input type="text" name="ingles_1_1">
+                            </td>
+                            <td class="column4 style8">
+                                <input type="text" name="marco_1_1">
+                            </td>
+                            <td class="column5 style8">
+                                <input type="text" name="tecnica_asistencia_1_1">
+                            </td>
+                            <td class="column6 style8">
+                                <input type="text" name="tecnica_autogestion_1_1">
+                            </td>
+                            <td class="column7 style8">
+                                <input type="text" name="tecnica_hardware_1_1">
+                            </td>
+                            <td class="column8 style8">
+                                <input type="text" name="tecnica_practicas_1_1">
+                            </td>
+                            <td class="column9 style8">
+                                <input type="text" name="tecnica_programacion_1_1">
+                            </td>
+                            <td class="column10 style8">
+                                <input type="text" name="tecnica_redes_1_1">
+                            </td>
+                            <td class="column11 style8">
+                                <input type="text" name="edi_arduino_1_1">
+                            </td>
+                        </tr>
+
                     </tbody>
                 </table>
                 <button type="submit" class="save-btn">Guardar Cambios</button>
             </div>
+        </div>
+
+        <div id="7mo2" class="tabcontent" style="display:none">
+            <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+                <tbody>
+                    <tr class="row0">
+                        <td class="column0 style1 s">Apellido y Nombre:</td>
+                        <td class="column1 style2 s" colspan="5">
+                            <input type="text" name="nombre" value="PAULETTO, Giovanni">
+                        </td>
+                        <td class="column6 style3 s">Curso:</td>
+                            
+                        <td class="column2 style5 s" colspan="7">7° 2° Técnica</td>
+                    </tr>
+                    <tr class="row1">
+                        <td class="column0 style4 s" colspan="2">Ciclo Superior de la ESO</td>
+                        <td class="column2 style5 s">Matemática</td>
+                        <td class="column3 style5 s">Inglés técnico</td>
+                        <td class="column4 style5 s">Marco jurídico y derechos del trabajo</td>
+                        <td class="column5 style5 s">TÉCNICA: Asistencia 2</td>
+                        <td class="column6 style5 s">TÉCNICA: Autogestión</td>
+                        <td class="column7 style5 s">TÉCNICA: Hardware 4</td>
+                        <td class="column8 style5 s">TÉCNICA: Prácticas Profesionalizantes 2</td>
+                        <td class="column9 style5 s">TÉCNICA: Programacion</td>
+                        <td class="column10 style5 s">TÉCNICA: Redes 3</td>
+                        <td class="column11 style5 s">EDI: Arduino 3</td>
+                    </tr>
+                    <tr class="row2">
+                        <td class="column0 style6 s" rowspan="3">1° Cuatrimestre</td>
+                        <td class="column1 style7 s">1° Informe</td>
+                        <td class="column2 style8">
+                            <input type="text" name="matematica_1_1">
+                        </td>
+                        <td class="column3 style8">
+                            <input type="text" name="ingles_1_1">
+                        </td>
+                        <td class="column4 style8">
+                            <input type="text" name="marco_1_1">
+                        </td>
+                        <td class="column5 style8">
+                            <input type="text" name="tecnica_asistencia_1_1">
+                        </td>
+                        <td class="column6 style8">
+                            <input type="text" name="tecnica_autogestion_1_1">
+                        </td>
+                        <td class="column7 style8">
+                            <input type="text" name="tecnica_hardware_1_1">
+                        </td>
+                        <td class="column8 style8">
+                            <input type="text" name="tecnica_practicas_1_1">
+                        </td>
+                        <td class="column9 style8">
+                            <input type="text" name="tecnica_programacion_1_1">
+                        </td>
+                        <td class="column10 style8">
+                            <input type="text" name="tecnica_redes_1_1">
+                        </td>
+                        <td class="column11 style8">
+                            <input type="text" name="edi_arduino_1_1">
+                        </td>
+                    </tr>
+                    
+                    <td class="column1 style7 s">2° Informe</td>
+                        <td class="column2 style8">
+                            <input type="text" name="matematica_1_1">
+                        </td>
+                        <td class="column3 style8">
+                            <input type="text" name="ingles_1_1">
+                        </td>
+                        <td class="column4 style8">
+                            <input type="text" name="marco_1_1">
+                        </td>
+                        <td class="column5 style8">
+                            <input type="text" name="tecnica_asistencia_1_1">
+                        </td>
+                        <td class="column6 style8">
+                            <input type="text" name="tecnica_autogestion_1_1">
+                        </td>
+                        <td class="column7 style8">
+                            <input type="text" name="tecnica_hardware_1_1">
+                        </td>
+                        <td class="column8 style8">
+                            <input type="text" name="tecnica_practicas_1_1">
+                        </td>
+                        <td class="column9 style8">
+                            <input type="text" name="tecnica_programacion_1_1">
+                        </td>
+                        <td class="column10 style8">
+                            <input type="text" name="tecnica_redes_1_1">
+                        </td>
+                        <td class="column11 style8">
+                            <input type="text" name="edi_arduino_1_1">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="save-btn">Guardar Cambios</button>
+            </div>
+        
+            <div id="7mo3" class="tabcontent" style="display:none">
+            <!-- Aquí va la planilla de 7mo 3ra -->
+            </div>
         </section>
-    </main>
+        
     
 
         
@@ -172,7 +465,6 @@
     </footer>
 
     <script src="../js/index.js"></script>
-
-        <script src="../js/index.js"></script>
+    <script src="../js/notas.js"></script>
 </body>
 </html>

@@ -1,103 +1,52 @@
-.grades-container {
-    max-width: 100%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    text-align: center;
-    color: #a2231d !important;
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-
-table.grades-table {
+/* Estilos generales para la tabla */
+.sheet0 {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    overflow-x: auto;
-    display: block;
+    font-size: 14px;
 }
 
-table.grades-table th, 
-table.grades-table td {
+.sheet0 td, .sheet0 th {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    font-size: 1rem;
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
 }
 
-table.grades-table th {
-    background-color: #a2231d;
-}
+.sheet0 .column0 { width: 150px; }
+.sheet0 .column1 { width: 100px; }
+.sheet0 .column2 { width: 100px; }
+.sheet0 .column3 { width: 100px; }
+.sheet0 .column4 { width: 100px; }
+.sheet0 .column5 { width: 100px; }
+.sheet0 .column6 { width: 100px; }
+.sheet0 .column7 { width: 100px; }
+.sheet0 .column8 { width: 100px; }
+.sheet0 .column9 { width: 100px; }
+.sheet0 .column10 { width: 100px; }
+.sheet0 .column11 { width: 100px; }
+.sheet0 .column12 { width: 50px; }
+.sheet0 .column13 { width: 50px; }
 
-table.grades-table input[type="text"] {
+/* Estilos para celdas con datos */
+.style1 { background-color: #f2f2f2; }
+.style2 { background-color: #fff; }
+.style3 { background-color: #f2f2f2; }
+.style4 { background-color: #fff; }
+.style5 { background-color: #e6e6e6; }
+.style6 { background-color: #fff; }
+.style7 { background-color: #f2f2f2; }
+.style8 { background-color: #fff; }
+.style15 { background-color: #f9f9f9; }
+
+/* Estilos para inputs */
+input[type="text"] {
     width: 100%;
-    padding: 5px;
-    font-size: 1rem;
+    padding: 4px;
+    border: 1px solid #ddd;
     box-sizing: border-box;
 }
 
-.form-actions {
-    text-align: center;
-    margin-top: 20px;
+input[type="text"]:focus {
+    border-color: #a2231d;
+    outline: none;
 }
 
-.form-actions button {
-    padding: 10px 20px;
-    background-color: #a2231d;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-}
-
-.form-actions button:hover {
-    background-color: #851913;
-}
-
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 768px) {
-    table.grades-table thead {
-        display: none; /* Esconde el encabezado */
-    }
-
-    table.grades-table, 
-    table.grades-table tbody, 
-    table.grades-table tr, 
-    table.grades-table td {
-        display: block;
-        width: 100%;
-    }
-
-    table.grades-table tr {
-        margin-bottom: 15px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    table.grades-table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
-
-    table.grades-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-        white-space: nowrap;
-    }
-
-    .form-actions button {
-        width: 100%;
-        font-size: 1rem;
-    }
-}
