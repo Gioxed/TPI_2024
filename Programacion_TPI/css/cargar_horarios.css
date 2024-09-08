@@ -1,16 +1,18 @@
+/* Contenedor principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Estilos para la tabla */
+/* Estilos para la tabla de horarios */
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
+/* Encabezados y celdas de la tabla */
 .schedule-table th, 
 .schedule-table td {
     border: 1px solid #ddd;
@@ -18,11 +20,13 @@
     text-align: center;
 }
 
+/* Encabezados de la tabla con fondo rojo */
 .schedule-table th {
     background-color: #c62828;
     color: white;
 }
 
+/* Estilos para los campos de entrada dentro de la tabla */
 .schedule-table input[type="time"], 
 .schedule-table input[type="text"] {
     width: 100%;
@@ -33,7 +37,7 @@
     box-sizing: border-box;
 }
 
-/* Botón de guardar */
+/* Botón de guardar cambios */
 .save-btn {
     display: block;
     width: 100%;
@@ -47,14 +51,15 @@
     text-align: center;
 }
 
+/* Cambiar color de fondo al pasar el ratón sobre el botón */
 .save-btn:hover {
-    background-color: #c62828;
+    background-color: #b71c1c; /* Color de fondo más oscuro al pasar el ratón */
 }
 
-/* Responsivo para pantallas pequeñas */
+/* Estilos responsivos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
     .schedule-table thead {
-        display: none; /* Esconde los encabezados en pantallas pequeñas */
+        display: none; /* Ocultar encabezados en pantallas pequeñas */
     }
 
     .schedule-table, 
@@ -86,19 +91,19 @@
     }
 
     .save-btn {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Aumentar el tamaño de la fuente en pantallas pequeñas */
     }
 }
 
-/* Responsivo para pantallas grandes */
+/* Estilos responsivos para pantallas grandes */
 @media screen and (min-width: 1200px) {
     .schedule-table th, 
     .schedule-table td {
         padding: 20px;
-        font-size: 1.1rem;
+        font-size: 1.1rem; /* Aumentar el tamaño de la fuente en pantallas grandes */
     }
 
     .save-btn {
-        font-size: 1.1rem;
+        font-size: 1.1rem; /* Aumentar el tamaño de la fuente del botón en pantallas grandes */
     }
 }

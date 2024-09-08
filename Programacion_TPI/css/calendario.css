@@ -1,0 +1,234 @@
+/* Contenedor del calendario */
+.calendar {
+    height: auto; /* Permite que el calendario se ajuste a su contenido */
+    width: 100%; /* Ajusta el ancho al contenedor */
+    max-width: 800px; /* Máximo ancho para mantener un diseño consistente */
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 35px 50px 20px 50px; /* Ajusta el padding para más espacio en la parte inferior */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: auto; /* Centra el calendario */
+}
+
+/* Encabezado del calendario */
+.calendar-header {
+    background: #a2231d;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 7px;
+    align-items: center;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 10px;
+}
+
+/* Cuerpo del calendario */
+.calendar-body {
+    padding: 10px;
+}
+
+/* Días de la semana */
+.calendar-week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    color: rgb(104, 104, 104);
+}
+
+/* Interacciones con los días de la semana */
+.calendar-week-days div:hover {
+    color: black;
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+}
+
+/* Estilo de los días de la semana */
+.calendar-week-days div {
+    display: grid;
+    place-items: center;
+    color: #a2231d;
+    height: 50px;
+}
+
+/* Días del calendario */
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: #0A0921;
+}
+
+/* Estilo de los días en el calendario */
+.calendar-days div {
+    width: 100%;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.calendar-days div:hover {
+    background-color: #fbc7d4;
+    border-radius: 20%;
+    color: #f8fbff;
+    transform: scale(1.1);
+}
+
+/* Fecha actual */
+.calendar-days div.current-date {
+    color: #f8fbff;
+    background-color: #c62828;
+    border-radius: 20%;
+}
+
+/* Selector de mes */
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Selector de año */
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+/* Cambio de año */
+.year-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.year-change:hover {
+    background-color: #c62828;
+    transform: scale(1.12);
+}
+
+/* Footer del calendario */
+.calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Formato de fecha y hora */
+.date-time-formate {
+    height: 4rem;
+    width: 100%;
+    font-family: Dubai Light, Century Gothic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texto de día y fecha */
+.day-text-formate {
+    font-family: Microsoft JhengHei UI;
+    font-size: 1.4rem;
+    padding-right: 5%;
+    border-right: 3px solid #c62828;
+}
+
+/* Valor de fecha y hora */
+.date-time-value {
+    display: block;
+    text-align: center;
+    padding-left: 5%;
+}
+
+/* Hora */
+.time-formate {
+    font-size: 1.5rem;
+}
+
+/* Estilos de animaciones */
+@keyframes to-top {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+}
+
+@keyframes to-left {
+    0% {
+        transform: translatex(230%);
+        opacity: 1;
+    }
+    100% {
+        transform: translatex(0);
+        opacity: 1;
+    }
+}
+
+@keyframes to-right {
+    10% {
+        transform: translatex(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translatex(-150%);
+        opacity: 1;
+    }
+}
+
+@keyframes showtime {
+    0% {
+        transform: translatex(250%);
+        opacity: 1;
+    }
+    100% {
+        transform: translatex(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes hidetime {
+    0% {
+        transform: translatex(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translatex(-370%);
+        opacity: 1;
+    }
+}
+
+/* Adaptabilidad para dispositivos móviles */
+@media (max-width: 768px) {
+    .calendar {
+        padding: 20px;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .calendar-week-days div,
+    .calendar-days div {
+        font-size: 0.9rem;
+        height: auto;
+        padding: 3px;
+    }
+
+    .calendar-days {
+        gap: 1px;
+    }
+}

@@ -1,27 +1,21 @@
-/* Estilos para las pestañas */
-        
-.tablink.active {
-    
-    font-weight: bold;
-}
-
-.tabcontent.active {
-    display: block;
-}
-
+/* Estilos para la tabla */
 .table-container {
     margin-bottom: 30px;
 }
 
 table, th, td {
     border: 1px solid #ddd;
+    border-collapse: collapse; /* Asegura que los bordes no se dupliquen */
 }
+
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
+
 th {
     background-color: #f4f4f4;
+    font-weight: bold; /* Destaca los encabezados */
 }
 
 /* Estilos generales para la tabla */
@@ -37,8 +31,6 @@ th {
     text-align: center;
 }
 
-
-
 /* Estilos para celdas con datos */
 .style1 { background-color: #f2f2f2; }
 .style2 { background-color: #fff; }
@@ -50,7 +42,7 @@ th {
 .style8 { background-color: #fff; }
 .style15 { background-color: #f9f9f9; }
 
-/* Estilos para inputs */
+/* Estilos para inputs dentro de la tabla */
 input[type="text"] {
     width: 100%;
     padding: 4px;
@@ -61,35 +53,5 @@ input[type="text"] {
 input[type="text"]:focus {
     border-color: #a2231d;
     outline: none;
+    box-shadow: 0 0 4px rgba(162, 35, 29, 0.5); /* Sombra sutil para foco */
 }
-
-
-.tabs {
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
-
-.tablink {
-    background-color: #ddd;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-}
-
-.tablink:hover {
-    background-color: #bbb;
-}
-
-.tablink.active {
-    background-color: #ccc;
-}
-
-.tabcontent {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-

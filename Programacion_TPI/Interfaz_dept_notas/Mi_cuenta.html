@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boletín Digital - Mi Cuenta</title>
+    
+    <!-- Enlaces a hojas de estilo y fuentes -->
     <link rel="stylesheet" href="../css/index.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/mi_cuenta.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- MENÚ -->
+    <!-- MENÚ LATERAL -->
     <div class="sidebar">
         <div class="logo_details">
             <i class="bx bxl-audible icon"></i>
@@ -20,54 +23,25 @@
             <i class="bx bx-menu" id="btn"></i>
         </div>
 
-        <!-- barra buscadora -->
+        <!-- Barra de búsqueda -->
         <ul class="nav-list">
             <li>
                 <i class="bx bx-search"></i>
-                <input type="text" placeholder="Search...">
-                
+                <input type="text" placeholder="Buscar...">
             </li>
 
-            <li>
-                <a href="index.html">
-                    <i class="bx bx-grid-alt"></i>
-                    <span class="link_name">Inicio</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="Mi_cuenta.html">
-                    <i class="bx bx-user"></i>
-                    <span class="link_name">Mi Cuenta</span>
-                </a>
-            </li>
-            <li>
-                <a href="cargar_notas.html">
-                    <i class="bx bx-book-content"></i>
-                    <span class="link_name">Cargar Notas</span>
-                </a>
-            </li>
-            <li>
-                <a href="cargar_horarios.html">
-                    <i class="bx bx-calendar"></i>
-                    <span class="link_name">Cargar Horarios</span>
-                </a>
-            </li>
-            <li>
-                <a href="calendario.html">
-                    <i class="bx bx-calendar-event"></i>
-                    <span class="link_name">Calendario</span>
-                </a>
-            </li>
-            <li>
-                <a href="Preguntas.html">
-                    <i class="bx bx-chat"></i>
-                    <span class="link_name">Preguntas frecuentes</span>
-                </a>
-            </li>
+            <!-- Enlaces del menú -->
+            <li><a href="index.html"><i class="bx bx-grid-alt"></i><span class="link_name">Inicio</span></a></li>
+            <li><a href="Mi_cuenta.html"><i class="bx bx-user"></i><span class="link_name">Mi Cuenta</span></a></li>
+            <li><a href="cargar_notas.html"><i class="bx bx-book-content"></i><span class="link_name">Cargar Notas</span></a></li>
+            <li><a href="cargar_horarios.html"><i class="bx bx-calendar"></i><span class="link_name">Cargar Horarios</span></a></li>
+            <li><a href="calendario.html"><i class="bx bx-calendar-event"></i><span class="link_name">Calendario</span></a></li>
+            <li><a href="Preguntas.html"><i class="bx bx-chat"></i><span class="link_name">Preguntas frecuentes</span></a></li>
+            
+            <!-- Perfil y cierre de sesión -->
             <li class="profile">
                 <div class="profile_details">
-                    <img src="profile.jpeg" alt="profile image">
+                    <img src="profile.jpeg" alt="Imagen de perfil">
                     <div class="profile_content">
                         <div class="name">Nombre</div>
                         <div class="designation">Random</div>
@@ -78,153 +52,145 @@
         </ul>
     </div>
 
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+        <section class="home-section">
+            <div class="text">
+                <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar"> Mi Cuenta
+            </div>
+            <p>Aquí puedes gestionar tus notas, mensajes y configuraciones personales.</p>
+        </section>
 
-
-        <!-- Contenido principal -->
-        <main class="content">
-
-            <section class="home-section">
-                <div class="text">
-                    <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-                    Mi Cuenta
-                </div>
-
-                <p>Aquí puedes gestionar tus notas, mensajes y configuraciones personales.</p>
-            </section>
-
-            <section class="home-section">
-                <div class="container light-style flex-grow-1 container-p-y">
-                    <h4 class="font-weight-bold py-3 mb-4">Configuración de Cuenta</h4>
-                    <div class="card overflow-hidden">
-                        <div class="row no-gutters row-bordered row-border-light">
-                            <div class="col-md-3 pt-0">
-                                <div class="list-group list-group-flush account-settings-links">
-                                    <a class="list-group-item list-group-item-action active" data-toggle="list"
-                                        href="#account-general">General</a>
-                                    <a class="list-group-item list-group-item-action" data-toggle="list"
-                                        href="#account-change-password">Cambiar Contraseña</a>
-                                    <a class="list-group-item list-group-item-action" data-toggle="list"
-                                        href="#account-info">Información Personal</a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade active show" id="account-general">
-                                        <div class="card-body media align-items-center">
-                                            <img src="#" alt
-                                                class="d-block ui-w-80">
-                                            <div class="media-body ml-4">
-                                                <label class="btn btn-outline-primary">
-                                                    Subir nueva foto
-                                                    <input type="file" class="account-settings-fileinput">
-                                                </label> &nbsp;
-                                                <button type="button" class="btn btn-default md-btn-flat">Restablecer</button>
-                                                <div class="text-light small mt-1">Formatos permitidos: JPG, GIF o PNG. Máx 800K</div>
-                                            </div>
-                                        </div>
-                                        <hr class="border-light m-0">
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label class="form-label">Nombre de Usuario</label>
-                                                <input type="text" class="form-control mb-1" placeholder="Mi Usuario">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Nombre Completo</label>
-                                                <input type="text" class="form-control" placeholder="Nombre Completo">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Correo Electrónico</label>
-                                                <input type="text" class="form-control mb-1" placeholder="ejemplo@gmail.com">
-                                                <div class="alert alert-warning mt-3">
-                                                    Tu correo no está confirmado. Por favor revisa tu bandeja de entrada.<br>
-                                                    <a href="javascript:void(0)">Reenviar confirmación</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="account-change-password">
-                                        <div class="card-body pb-2">
-                                            <div class="form-group">
-                                                <label class="form-label">Contraseña Actual</label>
-                                                <input type="password" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Nueva Contraseña</label>
-                                                <input type="password" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Repetir Nueva Contraseña</label>
-                                                <input type="password" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="account-info">
-                                        <div class="card-body pb-2">
-                                            <div class="form-group">
-                                                <label class="form-label">Biografía</label>
-                                                <textarea class="form-control" rows="5"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Fecha de Nacimiento</label>
-                                                <input type="text" class="form-control" value="3 de Mayo, 1995">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">País</label>
-                                                <select class="custom-select">
-                                                <option selected>Argentina</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <hr class="border-light m-0">
-                                        <div class="card-body pb-2">
-                                            <h6 class="mb-4">Contacto</h6>
-                                            <div class="form-group">
-                                                <label class="form-label">Teléfono</label>
-                                                <input type="text" class="form-control" value="+0 (123) 456 7891">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Sitio Web</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+        <section class="home-section">
+            <div class="container light-style flex-grow-1 container-p-y">
+                <h4 class="font-weight-bold py-3 mb-4">Configuración de Cuenta</h4>
+                
+                <!-- Tarjeta con secciones de configuración -->
+                <div class="card overflow-hidden">
+                    <div class="row no-gutters row-bordered row-border-light">
+                        
+                        <!-- Menú lateral de configuración -->
+                        <div class="col-md-3 pt-0">
+                            <div class="list-group list-group-flush account-settings-links">
+                                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Cambiar Contraseña</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Información Personal</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-right mt-3">
-                        <button type="button" class="btn btn-primary">Guardar Cambios</button>&nbsp;
-                        <button type="button" class="btn btn-default">Cancelar</button>
+
+                        <!-- Contenido de configuración -->
+                        <div class="col-md-9">
+                            <div class="tab-content">
+                                
+                                <!-- General -->
+                                <div class="tab-pane fade active show" id="account-general">
+                                    <div class="card-body media align-items-center">
+                                        <img src="#" alt class="d-block ui-w-80">
+                                        <div class="media-body ml-4">
+                                            <label class="btn btn-outline-primary">Subir nueva foto<input type="file" class="account-settings-fileinput"></label>
+                                            <button type="button" class="btn btn-default md-btn-flat">Restablecer</button>
+                                            <div class="text-light small mt-1">Formatos permitidos: JPG, GIF o PNG. Máx 800K</div>
+                                        </div>
+                                    </div>
+                                    <hr class="border-light m-0">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label class="form-label">Nombre de Usuario</label>
+                                            <input type="text" class="form-control mb-1" placeholder="Mi Usuario">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Nombre Completo</label>
+                                            <input type="text" class="form-control" placeholder="Nombre Completo">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Correo Electrónico</label>
+                                            <input type="text" class="form-control mb-1" placeholder="ejemplo@gmail.com">
+                                            <div class="alert alert-warning mt-3">Tu correo no está confirmado. Por favor revisa tu bandeja de entrada.<br><a href="javascript:void(0)">Reenviar confirmación</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cambiar contraseña -->
+                                <div class="tab-pane fade" id="account-change-password">
+                                    <div class="card-body pb-2">
+                                        <div class="form-group">
+                                            <label class="form-label">Contraseña Actual</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Nueva Contraseña</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Repetir Nueva Contraseña</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Información personal -->
+                                <div class="tab-pane fade" id="account-info">
+                                    <div class="card-body pb-2">
+                                        <div class="form-group">
+                                            <label class="form-label">Biografía</label>
+                                            <textarea class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Fecha de Nacimiento</label>
+                                            <input type="text" class="form-control" value="3 de Mayo, 1995">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">País</label>
+                                            <select class="custom-select">
+                                                <option selected>Argentina</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr class="border-light m-0">
+                                    <div class="card-body pb-2">
+                                        <h6 class="mb-4">Contacto</h6>
+                                        <div class="form-group">
+                                            <label class="form-label">Teléfono</label>
+                                            <input type="text" class="form-control" value="+0 (123) 456 7891">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Sitio Web</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </section>
-            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-            
-    <script type="text/javascript">
 
-    </script>
+                <!-- Botones de acción -->
+                <div class="text-right mt-3">
+                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-default">Cancelar</button>
+                </div>
+            </div>
+        </section>
 
-        </main>
-    </div>
+        <!-- Scripts de Bootstrap y jQuery -->
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    </main>
 
-    <!--::::Pie de Pagina::::::-->
+    <!-- PIE DE PÁGINA -->
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
-                <figure>
-                    <a href="#">
-                        <img src="../imagenes/logo_empresa.png" alt="Logo UniTeq">
-                    </a>
-                </figure>
+                <figure><a href="#"><img src="../imagenes/logo_empresa.png" alt="Logo UniTeq"></a></figure>
             </div>
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
             </div>
             <div class="box">
-                <h2>SIGUENOS</h2>
+                <h2>SÍGUENOS</h2>
                 <div class="red-social">
                     <a href="#" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
@@ -241,3 +207,4 @@
     <script src="../js/index.js"></script>
 </body>
 </html>
+

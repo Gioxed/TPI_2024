@@ -1,14 +1,17 @@
+/* Establece el tamaño de las imágenes de perfil a 80px */
 .ui-w-80 {
     width: 80px !important;
     height: auto;
 }
 
+/* Estilo de botón predeterminado */
 .btn-default {
     border-color: rgba(24, 28, 33, 0.1);
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     color: #4E5155;
 }
 
+/* Estilos para los botones */
 label.btn {
     margin-bottom: 0;
 }
@@ -20,27 +23,31 @@ label.btn {
 }
 
 .btn-outline-primary:hover {
-    background-color: #c62828 !important; /* Fondo rojo al hacer hover */
-    color: #fff !important; /* Texto blanco al hacer hover */
+    background-color: #c62828 !important;
+    color: #fff !important;
 }
 
 .btn {
     cursor: pointer;
 }
 
+/* Color de texto claro */
 .text-light {
     color: #babbbc !important;
 }
 
+/* Estilo de las tarjetas */
 .card {
     background-clip: padding-box;
     box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
 }
 
+/* Ocultar borde en elementos row */
 .row-bordered {
     overflow: hidden;
 }
 
+/* Ocultar input de archivos */
 .account-settings-fileinput {
     position: absolute;
     visibility: hidden;
@@ -49,68 +56,40 @@ label.btn {
     opacity: 0;
 }
 
+/* Estilo del enlace activo en la configuración de la cuenta */
 .account-settings-links .list-group-item.active {
     font-weight: bold !important;
-    color: #c62828 !important; /* Color rojo para el elemento activo */
+    color: #c62828 !important;
+    background: transparent !important;
 }
 
+/* Estilos específicos para diferentes estilos visuales */
 html:not(.dark-style) .account-settings-links .list-group-item.active {
     background: transparent !important;
 }
 
-.account-settings-multiselect ~ .select2-container {
-    width: 100% !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-    color: #c62828 !important; /* Color rojo para el elemento activo en el estilo claro */
-}
-
-.material-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.material-style .account-settings-links .list-group-item.active {
-    color: #c62828 !important; /* Color rojo para el elemento activo en el estilo material */
-}
-
+.light-style .account-settings-links .list-group-item,
+.material-style .account-settings-links .list-group-item,
 .dark-style .account-settings-links .list-group-item {
     padding: 0.85rem 1.5rem;
-    border-color: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(24, 28, 33, 0.03) !important;
 }
 
-.dark-style .account-settings-links .list-group-item.active {
+/* Estilos para campos de formulario en foco */
+input:focus, textarea:focus, select:focus, .btn-primary:focus {
+    border-color: #c62828 !important;
+    box-shadow: 0 0 0 0.2rem rgba(198, 40, 40, 0.25) !important;
+}
+
+/* Estilos para el botón 'Guardar cambios' */
+.btn-primary {
+    background-color: #c62828 !important;
+    border-color: #c62828 !important;
     color: #fff !important;
 }
 
-.light-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-
-/* Para los bordes y la sombra de los inputs cuando están enfocados */
-input:focus, textarea:focus, select:focus, .btn-primary:focus {
-    border-color: #c62828 !important; /* Borde rojo */
-    box-shadow: 0 0 0 0.2rem rgba(198, 40, 40, 0.25) !important; /* Sombra roja */
-}
-
-/* Para el botón de 'Guardar cambios' */
-.btn-primary {
-    background-color: #c62828 !important; /* Fondo rojo */
-    border-color: #c62828 !important; /* Borde rojo */
-    color: #fff !important; /* Texto blanco */
-}
-
 .btn-primary:hover {
-    background-color: #b71c1c !important; /* Fondo rojo más oscuro al pasar el mouse */
-    border-color: #b71c1c !important; /* Borde rojo más oscuro */
-    color: #fff !important; /* Texto blanco */
+    background-color: #b71c1c !important;
+    border-color: #b71c1c !important;
+    color: #fff !important;
 }
-

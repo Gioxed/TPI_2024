@@ -11,64 +11,34 @@
 
 <body>
 
-<!-- MENÚ -->
+<!-- MENÚ LATERAL -->
 <div class="sidebar">
     <div class="logo_details">
+        <!-- Icono y nombre del logo -->
         <i class="bx bxl-audible icon"></i>
         <div class="logo_name">Mi Boletín</div>
         <i class="bx bx-menu" id="btn"></i>
     </div>
 
-    <!-- barra buscadora -->
+    <!-- Barra de navegación -->
     <ul class="nav-list">
+        <!-- Barra de búsqueda -->
         <li>
             <i class="bx bx-search"></i>
-            <input type="text" placeholder="Search...">
-            
+            <input type="text" placeholder="Buscar...">
         </li>
-
-        <li>
-            <a href="index.html">
-                <i class="bx bx-grid-alt"></i>
-                <span class="link_name">Inicio</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="Mi_cuenta.html">
-                <i class="bx bx-user"></i>
-                <span class="link_name">Mi Cuenta</span>
-            </a>
-        </li>
+        <!-- Opciones de navegación -->
+        <li><a href="index.html"><i class="bx bx-grid-alt"></i><span class="link_name">Inicio</span></a></li>
+        <li><a href="Mi_cuenta.html"><i class="bx bx-user"></i><span class="link_name">Mi Cuenta</span></a></li>
+        <li><a href="cargar_notas.html"><i class="bx bx-book-content"></i><span class="link_name">Cargar Notas</span></a></li>
+        <li><a href="cargar_horarios.html"><i class="bx bx-calendar"></i><span class="link_name">Cargar Horarios</span></a></li>
+        <li><a href="calendario.html"><i class="bx bx-calendar-event"></i><span class="link_name">Calendario</span></a></li>
+        <li><a href="Preguntas.html"><i class="bx bx-chat"></i><span class="link_name">Preguntas Frecuentes</span></a></li>
         
-        <li>
-            <a href="cargar_notas.html">
-                <i class="bx bx-book-content"></i>
-                <span class="link_name">Cargar Notas</span>
-            </a>
-        </li>
-        <li>
-            <a href="cargar_horarios.html">
-                <i class="bx bx-calendar"></i>
-                <span class="link_name">Cargar Horarios</span>
-            </a>
-        </li>
-        <li>
-            <a href="calendario.html">
-                <i class="bx bx-calendar-event"></i>
-                <span class="link_name">Calendario</span>
-            </a>
-        </li>
-        <li>
-            <a href="Preguntas.html">
-                <i class="bx bx-chat"></i>
-                <span class="link_name">Preguntas frecuentes</span>
-            </a>
-        </li>
-        
+        <!-- Perfil del usuario -->
         <li class="profile">
             <div class="profile_details">
-                <img src="profile.jpeg" alt="profile image">
+                <img src="profile.jpeg" alt="Imagen de perfil">
                 <div class="profile_content">
                     <div class="name">Nombre</div>
                     <div class="designation">Random</div>
@@ -79,13 +49,15 @@
     </ul>
 </div>
 
-
+<!-- CONTENIDO PRINCIPAL -->
 <main>
     <section class="home-section">
+        <!-- Título de la sección -->
         <div class="text">
             <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-                Cargar Horarios
+            Cargar Horarios
         </div>
+        <!-- Sección para cargar horarios -->
         <section class="schedule-section">
             <div class="container">
                 <table class="schedule-table">
@@ -100,6 +72,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Fila de ejemplo para horarios -->
                         <tr>
                             <td><input type="time"></td>
                             <td><input type="text" placeholder="Asignatura"></td>
@@ -108,26 +81,16 @@
                             <td><input type="text" placeholder="Asignatura"></td>
                             <td><input type="text" placeholder="Asignatura"></td>
                         </tr>
-                        <tr>
-                            <td><input type="time"></td>
-                            <td><input type="text" placeholder="Asignatura"></td>
-                            <td><input type="text" placeholder="Asignatura"></td>
-                            <td><input type="text" placeholder="Asignatura"></td>
-                            <td><input type="text" placeholder="Asignatura"></td>
-                            <td><input type="text" placeholder="Asignatura"></td>
-                        </tr>
-                        <!-- Añade más filas según sea necesario -->
+                        <!-- Puedes añadir más filas según sea necesario -->
                     </tbody>
                 </table>
                 <button type="submit" class="save-btn">Guardar Cambios</button>
             </div>
         </section>
     </section>
-    
 </main>
 
-
-<!--::::Pie de Pagina::::::-->
+<!-- PIE DE PÁGINA -->
 <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
@@ -143,7 +106,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
         </div>
         <div class="box">
-            <h2>SIGUENOS</h2>
+            <h2>SÍGUENOS</h2>
             <div class="red-social">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-instagram"></a>
@@ -157,6 +120,9 @@
     </div>
 </footer>
 
+<!-- SCRIPT -->
 <script src="../js/index.js"></script>
 
 </body>
+</html>
+
