@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/calendario.css">
+
 </head>
 
 <body>
@@ -72,19 +74,57 @@
     </div>
 
 
-    <main>
-        <section class="home-section">
-            <div class="text">
-                <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-                Mi Cuenta
-            </div>
+    
+<main>
+    <section class="home-section">
+        <div class="text">
+            <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
+            Calendario
+        </div>
 
-            <h1>Bienvenido al Boletín Digital</h1>
-            <p>Aquí podrás cargar y consultar las notas de los alumnos.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate laboriosam officia tempora ea tempore quia qui delectus quisquam amet, sed inventore, sunt commodi nostrum sit vero aut similique, tenetur provident. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit rem obcaecati ad harum ut numquam ea quaerat, molestiae error? Odio rem, natus ab quidem nam corporis eaque in corrupti praesentium! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis non temporibus odit adipisci tempora molestias earum obcaecati, quis nulla eaque, recusandae debitis assumenda est aspernatur quibusdam autem neque quo.
-            </p>
-        </section>
-    </main>
+        <div class="contianer">
+            <div class="calendar">
+                <div class="calendar-header">
+                <span class="month-picker" id="month-picker"> Mayo </span>
+                <div class="year-picker" id="year-picker">
+                    <span class="year-change" id="pre-year">
+                    <pre><</pre>
+                </span>
+                <span id="year">2024 </span>
+                <span class="year-change" id="next-year">
+                    <pre>></pre>
+                </span>
+                </div>
+            </div>
+        
+            <div class="calendar-body">
+                <div class="calendar-week-days">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Miér</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                </div>
+                <div class="calendar-days">
+                </div>
+            </div>
+            <div class="calendar-footer">
+            </div>
+            <div class="date-time-formate">
+                <div class="day-text-formate">HOY</div>
+                <div class="date-time-value">
+                <div class="time-formate">01:41:20</div>
+                <div class="date-formate">03 - marzo - 2024</div>
+                </div>
+            </div>
+            <div class="month-list"></div>
+            </div>
+        </div>
+    </section>
+    
+</main>
 
     <!--::::Pie de Pagina::::::-->
     <footer class="pie-pagina">
@@ -115,6 +155,7 @@
         </div>
     </footer>
 
+    <script src="../js/calendario.js"></script>
     <script src="../js/index.js"></script>
 </body>
 </html>
