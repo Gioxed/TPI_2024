@@ -15,6 +15,7 @@ header {
     left: 0;
 }
 
+
 /* Menú lateral */
 .sidebar {
     min-height: 100vh;
@@ -271,9 +272,30 @@ header {
     background: none;
   }
 
+  /*para que quede marcada la pagina en la que estoy cuando la selecciono xd*/
+  .sidebar li a.active {
+    background-color: #fff8; /* Color de fondo para el enlace activo */
+    color: #a2231d !important; /* Cambia el color del texto activo */
+    border-radius: 5px;
+}
+.sidebar li a.active i {
+  color: #a2231d; /* Cambia el color del ícono en el enlace activo */
+}
+
+
   /*:::::FIN MENÚ*/
   
   /* Sección principal */
+
+.home-section .logo {
+    margin-right: 10px;
+}
+
+.home-section h1 {
+    font-size: 2em;
+    color: #a2231d;
+}
+
 .home-section {
   position: relative;
   background-color: #e4e9f7;
@@ -297,9 +319,12 @@ header {
 
 .home-section .text {
   color: #a2231d;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   margin: 0; /* Elimina el margen para mejor alineación */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 /* Estilos para el logo */

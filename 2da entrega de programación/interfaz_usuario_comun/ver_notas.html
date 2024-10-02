@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/cargar_notas.css">
 </head>
 
 <body>
@@ -41,7 +42,7 @@
                 </a>
             </li>
             <li>
-                <a href="ver_notas.html">
+                <a href="ver_notas.html" class="active">
                     <i class="bx bx-book-content"></i>
                     <span class="link_name">Mis Notas</span>
                 </a>
@@ -56,6 +57,12 @@
                 <a href="calendario.html">
                     <i class="bx bx-calendar-event"></i>
                     <span class="link_name">Calendario</span>
+                </a>
+            </li>
+            <li>
+                <a href="Preguntas.html">
+                    <i class="bx bx-chat"></i>
+                    <span class="link_name">Preguntas frecuentes</span>
                 </a>
             </li>
             <li class="profile">
@@ -75,14 +82,92 @@
     <main>
         <section class="home-section">
             <div class="text">
-                <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar">
-                Inicio
+                <img width="50px" src="../imagenes/logo.png" alt="Logo Escolar" class="logo">
+                <h1>Ver Notas</h1>
             </div>
 
-            <h1>Bienvenido al Boletín Digital</h1>
-            
+            <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+                <col class="col0">
+                <col class="col1">
+                <col class="col2">
+                <col class="col3">
+                <col class="col4">
+                <col class="col5">
+                <col class="col6">
+                <col class="col7">
+                <col class="col8">
+                <col class="col9">
+                <col class="col10">
+                <col class="col11">
+                <col class="col12">
+                <col class="col13">
+                <tbody>
+                    <tr class="row0">
+                        <td class="column0 style1 s">Apellido y Nombre:</td>
+                        <td class="column1 style2 s" colspan="5">
+                            <input type="text" name="nombre" value="PAULETTO, Giovanni">
+                        </td>
+                        <td class="column6 style3 s">Curso:</td>
+                        <td class="column7 style2 s" colspan="7">
+                            <input type="text" name="curso" value="7° 2° Técnica">
+                        </td>
+                    </tr>
+                    <tr class="row1">
+                        <td class="column0 style4 s" colspan="2">Ciclo Superior de la ESO</td>
+                        <td class="column2 style5 s">Matemática</td>
+                        <td class="column3 style5 s">Inglés técnico</td>
+                        <td class="column4 style5 s">Marco jurídico y derechos del trabajo</td>
+                        <td class="column5 style5 s">TÉCNICA: Asistencia 2</td>
+                        <td class="column6 style5 s">TÉCNICA: Autogestión</td>
+                        <td class="column7 style5 s">TÉCNICA: Hardware 4</td>
+                        <td class="column8 style5 s">TÉCNICA: Prácticas Profesionalizantes 2</td>
+                        <td class="column9 style5 s">TÉCNICA: Programacion</td>
+                        <td class="column10 style5 s">TÉCNICA: Redes 3</td>
+                        <td class="column11 style5 s">EDI: Arduino 3</td>
+                    </tr>
+                    <tr class="row2">
+                        <td class="column0 style6 s" rowspan="3">1° Cuatrimestre</td>
+                        <td class="column1 style7 s">1° Informe</td>
+                        <td class="column2 style8">
+                            <input type="text" name="matematica_1_1">
+                        </td>
+                        <td class="column3 style8">
+                            <input type="text" name="ingles_1_1">
+                        </td>
+                        <td class="column4 style8">
+                            <input type="text" name="marco_1_1">
+                        </td>
+                        <td class="column5 style8">
+                            <input type="text" name="tecnica_asistencia_1_1">
+                        </td>
+                        <td class="column6 style8">
+                            <input type="text" name="tecnica_autogestion_1_1">
+                        </td>
+                        <td class="column7 style8">
+                            <input type="text" name="tecnica_hardware_1_1">
+                        </td>
+                        <td class="column8 style8">
+                            <input type="text" name="tecnica_practicas_1_1">
+                        </td>
+                        <td class="column9 style8">
+                            <input type="text" name="tecnica_programacion_1_1">
+                        </td>
+                        <td class="column10 style8">
+                            <input type="text" name="tecnica_redes_1_1">
+                        </td>
+                        <td class="column11 style8">
+                            <input type="text" name="edi_arduino_1_1">
+                        </td>
+                    </tr>
+                    <!-- Agregar más filas según sea necesario para otros informes y cuatrimestres -->
+                </tbody>
+            </table>
         </section>
+
+        
+
     </main>
+
 
     <!--::::Pie de Pagina::::::-->
     <footer class="pie-pagina">
