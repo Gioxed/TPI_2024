@@ -93,3 +93,30 @@ input[type="text"]:focus {
     border-top: none;
 }
 
+/* Botón más grande y centrado */
+.save-button {
+    background-color: #a2231d; /* Color de fondo basado en tu marca */
+    color: white;
+    padding: 15px 30px; /* Aumentado tamaño del botón */
+    font-size: 20px; /* Texto más grande */
+    border: none;
+    border-radius: 10px; /* Bordes más redondeados */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto; /* Centrado automático y margen superior */
+    text-align: center;
+}
+
+.save-button:hover {
+    background-color: #a2231d;
+}
+
+.save-button:active {
+    background-color: #a2231d;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+}
+
+

@@ -287,13 +287,12 @@ header {
   
   /* Sección principal */
 
-.home-section .logo {
-    margin-right: 10px;
-}
+
 
 .home-section h1 {
     font-size: 2em;
     color: #a2231d;
+    margin-left: 10px;
 }
 
 .home-section {

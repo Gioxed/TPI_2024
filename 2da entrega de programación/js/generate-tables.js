@@ -88,10 +88,16 @@
                     `).join('')}
                 </tbody>
             </table>
+            <button type="button" class="save-button" onclick="saveTable(${i})">Guardar</button> <!-- Botón de Guardar -->
                     </div>
                 `;
                 container.innerHTML += tableHTML;
             }
+        }
+
+        function saveTable(tableId) {
+            // Lógica para guardar la tabla
+            alert(`Guardando datos de la tabla ${tableId}`);
         }
 
         function showTab(tabId) {
