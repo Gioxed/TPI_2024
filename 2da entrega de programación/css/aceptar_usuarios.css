@@ -1,0 +1,36 @@
+.pending-users-section {
+    margin: 30px;
+}
+
+.pending-users-table {
+    margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pending-users-table th, .pending-users-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.pending-users-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.btn-accept {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-reject {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
