@@ -214,3 +214,42 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+.info-escuela {
+    position: absolute;
+    top: 15%; /* Ajusta según lo necesites */
+    left: 100px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo semi-transparente para visibilidad */
+    padding: 20px;
+    border-radius: 10px;
+    width: 470px; /* Aumenta el ancho según lo necesario */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.info-escuela img {
+    max-width: 50px; /* Tamaño del logo */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    vertical-align: middle; /* Alinea verticalmente el logo con el texto */
+    margin-right: 10px; /* Espacio entre la imagen y el título */
+    display: inline-block; /* Para que esté en línea con el texto */
+}
+
+.info-escuela h1 {
+    font-size: 25px;
+    color: #3D0000;
+    display: inline-block; /* Para que el h1 esté en línea con el logo */
+    margin: 0; /* Elimina el margen por defecto del h1 */
+}
+
+.info-escuela p {
+    line-height: 1.6; /* Aumenta el interlineado */
+    margin: 10px 0; /* Espaciado entre párrafos */
+}
+
+.map-container {
+    margin-top: 15px; /* Espacio encima del mapa */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Para evitar que el iframe sobresalga */
+    max-width: 100%; /* Asegura que el mapa no exceda el ancho del contenedor */
+}
