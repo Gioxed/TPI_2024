@@ -1,2 +1,2 @@
-use salvadora;
-SELECT * FROM clientes;
+use sistema_notas;
+SELECT * FROM usuario;
