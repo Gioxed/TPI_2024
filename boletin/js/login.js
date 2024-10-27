@@ -53,11 +53,14 @@ loginForm.addEventListener('submit', (e) => {
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevenir la recarga de la página
     const name = registerForm.name.value;
+    const lastname = registerForm.lastname.value;
+    const dni = registerForm.dni.value;
     const email = registerForm.email.value;
     const password = registerForm.password.value;
+    const role = registerForm.role.value;
 
     // Validación simple
-    if (!name || !email || !password) {
+    if (!name || !lastname || !dni || !email || !password || !role) {
         alert("Por favor, completa todos los campos.");
         return;
     }
@@ -68,7 +71,7 @@ registerForm.addEventListener('submit', (e) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, lastname, dni, email, password, role }),
     })
     .then(response => response.json())
     .then(data => {
@@ -84,3 +87,4 @@ registerForm.addEventListener('submit', (e) => {
         alert("Error en la conexión al servidor");
     });
 });
+

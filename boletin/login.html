@@ -16,27 +16,27 @@
         <!-- Contenedor para el formulario de inicio/registro -->
         <div class="container" id="container">
             <div class="form-container sign-up">
-                <form>
+                <form id="register-form">
                     <h1>Crear Cuenta</h1>
-                    <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Apellido">
-                    <input type="text" placeholder="DNI">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Contraseña">
-                    <select>
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="text" name="lastname" placeholder="Apellido" required>
+                    <input type="text" name="dni" placeholder="DNI" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <select name="role" required>
                         <option value="alumno">Alumno/Padre</option>
                         <option value="encargado">Encargado de Cargar Notas</option>
                     </select>
-                    <button>Registrar</button>
+                    <button type="submit">Registrar</button>
                 </form>
             </div>
             <div class="form-container sign-in">
-                <form>
+                <form id="login-form">
                     <h1>Iniciar Sesión</h1>
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" name="dni" placeholder="DNI" required> <!-- Cambié a 'text' para DNI -->
+                    <input type="password" name="password" placeholder="Contraseña" required>
                     <a href="#">¿Olvidaste tu contraseña?</a>
-                    <button>Iniciar Sesión</button>
+                    <button type="submit">Iniciar Sesión</button>
                 </form>
             </div>
             <div class="toggle-container">
@@ -57,22 +57,21 @@
 
         <!-- Contenedor para la información de la escuela alineada a la izquierda -->
         <div class="info-escuela">
-            <img src="../2da entrega de programación/imagenes/logo.png" alt="Logo del Colegio"> 
+            <img src="../boletin/imagenes/logo.png" alt="Logo del Colegio"> 
             <h1>Colegio Dr. Ernesto Guevara</h1>
-<p><strong>Teléfono:</strong> <a href="tel:2964300532">2964 300532</a></p>
-<p><strong>Correo Electrónico:</strong> <a href="mailto:cpdeguevara.sec@tdf.edu.ar">cpdeguevara.sec@tdf.edu.ar</a></p>
-<p><strong>Nivele Educativo:</strong> Secundaria.</p>
-<p><strong>Ubicación:</strong></p>
-<div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4487.182223227556!2d-67.75192344337522!3d-53.79928159804732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4b166400858a59%3A0xc2dc84ca26547d6a!2sColegio%20Provincial%20Dr.%20Ernesto%20Guevara!5e0!3m2!1ses-419!2sar!4v1728672614683!5m2!1ses-419!2sar"  width="450" height="170" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
+            <p><strong>Teléfono:</strong> <a href="tel:2964300532">2964 300532</a></p>
+            <p><strong>Correo Electrónico:</strong> <a href="mailto:cpdeguevara.sec@tdf.edu.ar">cpdeguevara.sec@tdf.edu.ar</a></p>
+            <p><strong>Nivel Educativo:</strong> Secundaria.</p>
+            <p><strong>Ubicación:</strong></p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4487.182223227556!2d-67.75192344337522!3d-53.79928159804732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4b166400858a59%3A0xc2dc84ca26547d6a!2sColegio%20Provincial%20Dr.%20Ernesto%20Guevara!5e0!3m2!1ses-419!2sar!4v1728672614683!5m2!1ses-419!2sar" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
-    
-        
 
     <script src="script.js"></script>
-    <script src="../2da entrega de programación/js/login.js"></script>
-    <script src="../2da entrega de programación/Backend/logg.js"></script>
+    <script src="../boletin/js/login.js"></script>
+    <script src="../boletin/Backend/log.js"></script>
+    <script src="../boletin/Backend/auth.js"></script>
 </body>
 
 </html>
