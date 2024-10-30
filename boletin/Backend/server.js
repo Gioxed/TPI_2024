@@ -1,31 +1,33 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-const notasRouter = require('./notas'); // Asegúrate de que la ruta sea correcta
+import express from 'express';
+import bodyParser from 'body-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import authRoutes from './auth.js'; // Importa las rutas de autenticación
 
 const app = express();
-const PORT = 3000;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Conexión a la base de datos
-const db = mysql.createConnection({
-    host: 'localhost', // Cambia esto si es necesario
-    user: 'root', // Cambia esto si es necesario
-    password: 'ElTPI2024', // Cambia esto si es necesario
-    database: 'sistema_notas',
-});
-
-// Conectar a la base de datos
-db.connect((err) => {
-    if (err) throw err;
-    console.log('Conexión a la base de datos establecida exitosamente!');
-});
-
-// Middleware
+// Configuración del puerto y middleware
+app.set('port', 4000);
 app.use(bodyParser.json());
-app.use('/api', notasRouter); // Añade esta línea para usar el router de notas
+app.use(bodyParser.urlencoded({ extended: true })); // Para manejar formularios
+app.use(express.static(path.join(__dirname, '../boletin/interfaz_admin'))); // Servir archivos de la interfaz del administrador
+
+// Usar las rutas de autenticación
+app.use('/auth', authRoutes); // Define la ruta para autenticación
+
+// Ruta para la página de inicio de sesión
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, '../TPI/login.html')); // Ajusta esto si tu login está en otra ubicación
+});
+
+// Ruta para el panel del administrador
+app.get('/admin/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../boletin/interfaz_admin/index.html')); // Cambia esto a la ruta de tu archivo
+});
 
 // Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.listen(app.get('port'), () => {
+    console.log(`Servidor corriendo en http://localhost:${app.get('port')}`);
 });
 

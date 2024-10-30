@@ -27,4 +27,6 @@ connection.query('select * from usuarios', (err, rows)=> {
 })
 
 connection.end();
+// Exportar el pool para usarlo en otros archivos
+export { pool };
 
