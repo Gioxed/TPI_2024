@@ -16,7 +16,7 @@
         <!-- Contenedor para el formulario de inicio/registro -->
         <div class="container" id="container">
             <div class="form-container sign-up">
-                <form id="register-form" action="/auth/login" method="POST">
+                <form id="register-form" action="/auth/register" method="POST">
                     <h1>Crear Cuenta</h1>
                     <input type="text" name="name" placeholder="Nombre" required>
                     <input type="text" name="lastname" placeholder="Apellido" required>
@@ -29,7 +29,9 @@
                     </select>
                     <button type="submit">Registrar</button>
                 </form>
+                <div id="register-message" style="display: none; color: red;"></div>
             </div>
+            
             <div class="form-container sign-in">
                 <form id="login-form" action="/auth/login" method="POST">
                     <h1>Iniciar Sesión</h1>
@@ -69,55 +71,81 @@
         </div>
 
         <script>
-            document.getElementById('login-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
+            document.getElementById('login-form').addEventListener('submit', async function(event) {
+                event.preventDefault(); // Evita el envío del formulario estándar
+            
+                const dni = event.target.dni.value;
+                const password = event.target.password.value;
+            
+                try {
+                    const response = await fetch('/auth/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ dni, password })
+                    });
+                    
+                    const result = await response.json();
+            
+                    if (result.success) {
+                        // Redirige si la autenticación es exitosa
+                        window.location.href = result.redirectUrl;
+                    } else {
+                        // Muestra el mensaje de error
+                        const messageElement = document.getElementById('login-message');
+                        messageElement.style.display = 'block';
+                        messageElement.textContent = result.message;
+                    }
+                } catch (error) {
+                    console.error("Error al intentar iniciar sesión:", error);
+                }
+            });
+            </script>
 
-    const dni = e.target.dni.value;
-    const password = e.target.password.value;
+<script>
+    // Añade un evento al formulario de registro para manejar el envío
+    document.getElementById('register-form').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Evita el envío del formulario estándar
 
-    const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ dni, password })
+        // Obtén los valores de los campos de entrada
+        const name = event.target.name.value;
+        const lastname = event.target.lastname.value;
+        const dni = event.target.dni.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const role = event.target.role.value;
+
+        try {
+            // Envía los datos de registro al backend
+            const response = await fetch('/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, lastname, dni, email, password, role })
+            });
+            
+            const result = await response.json(); // Convierte la respuesta a JSON
+
+            if (result.success) {
+                // Redirige o muestra un mensaje de éxito
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                 // Redirige al formulario de inicio de sesión (ajusta la ruta si es necesario)
+            } else {
+                // Muestra el mensaje de error si algo falló
+                const messageElement = document.getElementById('register-message');
+                messageElement.style.display = 'block';
+                messageElement.textContent = result.message; // Muestra el mensaje de error en el elemento correspondiente
+            }
+        } catch (error) {
+            console.error("Error al intentar registrar:", error); // Muestra el error en la consola
+        }
     });
+</script>
 
-    const data = await response.json();
-    if (response.ok) {
-        alert(data.message); // Inicio de sesión exitoso
-    } else {
-        alert(data.error); // Error en el inicio de sesión
-    }
-});
 
-document.getElementById('register-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const name = e.target.name.value;
-    const lastname = e.target.lastname.value;
-    const dni = e.target.dni.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const role = e.target.role.value;
-
-    const response = await fetch('/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, lastname, dni, email, password, role })
-    });
-
-    const data = await response.json();
-    if (response.ok) {
-        alert(data.message); // Registro exitoso
-    } else {
-        alert(data.error); // Error en el registro
-    }
-});
-
-        </script>
-    <script src="script.js" defer></script>
-    <script src="../boletin/js/login.js"></script>
-    <script src="../boletin/Backend/log.js"></script>
-    <script src="../boletin/Backend/auth.js"></script>
+        
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+    <script src="Backend/log.js"></script>
+    <script src="Backend/auth.js"></script>
 </body>
 
 </html>

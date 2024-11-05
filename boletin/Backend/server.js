@@ -1,30 +1,41 @@
-import express from 'express';
+import express  from "express";
 import bodyParser from 'body-parser';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import authRoutes from './auth.js'; // Importa las rutas de autenticación
+//Fix para __direname
+import path from "path";
+import {fileURLToPath} from "url";
+import authRoutes from './auth.js';
 
-const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Configuración del puerto y middleware
+const app = express();
 app.set('port', 4000);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); // Para manejar formularios
-app.use(express.static(path.join(__dirname, '../boletin/interfaz_admin'))); // Servir archivos de la interfaz del administrador
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // Usar las rutas de autenticación
-app.use('/auth', authRoutes); // Define la ruta para autenticación
+app.use('/auth', authRoutes);
+
+// Rutas estáticas principales para CSS, JS e imágenes
+app.use('/css', express.static(path.join(__dirname, '../css')));
+app.use('/js', express.static(path.join(__dirname, '../js')));
+app.use('/imagenes', express.static(path.join(__dirname, '../imagenes')));
+
+
+// Sirve las interfaces de usuario como rutas estáticas
+app.use('/admin', express.static(path.join(__dirname, '../interfaz_admin')));
+app.use('/dept_notas', express.static(path.join(__dirname, '../interfaz_dept_notas')));
+app.use('/usuario_comun', express.static(path.join(__dirname, '../interfaz_usuario_comun')));
+
+// Usar las rutas de autenticación
+app.use('/auth', authRoutes);
 
 // Ruta para la página de inicio de sesión
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '../TPI/login.html')); // Ajusta esto si tu login está en otra ubicación
+    res.sendFile(path.join(__dirname, '../login.html'));
 });
 
-// Ruta para el panel del administrador
-app.get('/admin/index.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../boletin/interfaz_admin/index.html')); // Cambia esto a la ruta de tu archivo
-});
 
 // Iniciar el servidor
 app.listen(app.get('port'), () => {
