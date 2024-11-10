@@ -72,9 +72,9 @@ router.post('/register', async (req, res) => {
     }
 });
 
+
+
 // Exporta el router para que pueda ser utilizado en el archivo principal de la aplicación
-export default router;                                                                                                                             
-
-
+export default router;      
 
 

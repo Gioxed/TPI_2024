@@ -100,6 +100,65 @@
     </div>
 </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('/api/alumnos'); // Llamada a la nueva ruta
+        const alumnos = await response.json();
+
+        // Llenar todos los selects
+        for (let i = 1; i <= 25; i++) { // Si tienes 25 tablas por ejemplo
+            const selectAlumno = document.getElementById(`dni_alumno_${i}`);
+            if (selectAlumno) {
+                alumnos.forEach(alumno => {
+                    const option = document.createElement('option');
+                    option.value = alumno.dni; // Usar DNI como valor
+                    option.textContent = `${alumno.nombre} ${alumno.apellido}`; // Mostrar nombre y apellido del alumno
+                    selectAlumno.appendChild(option);
+                });
+            }
+        }
+    } catch (error) {
+        console.error('Error al cargar los alumnos:', error);
+    }
+});
+
+</script>
+
+
+<script>
+    // Función para cargar las notas de un alumno
+function cargarNota(dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1, 
+                    nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2, 
+                    nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final) {
+    
+    fetch('/api/cargar-nota', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1, 
+            nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2, 
+            nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al guardar la nota');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data.message); // Mensaje de éxito o error
+    })
+    .catch(error => {
+        console.error('Error al cargar la nota:', error);
+    });
+}
+
+</script>
+
     <script src="../js/index.js"></script>
     <script src="../js/generate-tables.js"></script>
     <script src="../Backend/notas.js"></script>

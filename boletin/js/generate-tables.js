@@ -3,6 +3,7 @@
             const container = document.getElementById(tabId);
             container.innerHTML = ''; // Clear the container
 
+            
             for (let i = 1; i <= count; i++) {
                 const tableHTML = `
                     <div class="table-container">
@@ -11,7 +12,10 @@
                     <tr class="row0">
                         <td class="column0 style1 s">Apellido y Nombre:</td>
                         <td class="column1 style2 s" colspan="5">
-                            <input type="text" name="nombre" placeholder="Nombre, Apellido">
+                            <select name="dni_alumno" id="dni_alumno_${i}" required>
+                            <option value="">Seleccione un alumno</option>
+                            <!-- Opciones cargadas dinámicamente desde la base de datos -->
+                            </select>
                         </td>
                         <td class="column6 style3 s">Tabla:</td>
                         <td class="column2 style5 s" colspan="7">${i}</td>
@@ -93,7 +97,11 @@
                 `;
                 container.innerHTML += tableHTML;
             }
+            
+            
         }
+
+
 
         function saveTable(tableId) {
             // Lógica para guardar la tabla
@@ -120,3 +128,5 @@
 
         // Show the first tab by default
         showTab('tab1');
+
+    
