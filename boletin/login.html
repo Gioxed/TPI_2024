@@ -87,6 +87,9 @@
                     const result = await response.json();
             
                     if (result.success) {
+                        // Guardar el DNI en el localStorage
+                        localStorage.setItem('dni', dni);  // Guardamos el DNI del usuario
+        
                         // Redirige si la autenticación es exitosa
                         window.location.href = result.redirectUrl;
                     } else {
@@ -99,7 +102,8 @@
                     console.error("Error al intentar iniciar sesión:", error);
                 }
             });
-            </script>
+        </script>
+        
 
 <script>
     // Añade un evento al formulario de registro para manejar el envío

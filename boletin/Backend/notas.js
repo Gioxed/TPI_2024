@@ -12,23 +12,133 @@ router.get('/notas/:dni', (req, res) => {
     SELECT
     u.nombre AS nombre_alumno,
     u.apellido AS apellido_alumno,
-    n.id_nota,
-    n.informe_1_cuatrimestre1 AS matematica_1_1,
-    n.informe_2_cuatrimestre1 AS matematica_1_2,
-    n.nota_cuatrimestre1 AS matematica_1_final,
-    n.informe_1_cuatrimestre2 AS matematica_2_1,
-    n.informe_2_cuatrimestre2 AS matematica_2_2,
-    n.nota_cuatrimestre2 AS matematica_2_final,
-    n.nota_anual AS matematica_anual,
-    n.rec_dic AS matematica_rec_dic,
-    n.rec_feb AS matematica_rec_feb,
-    n.nota_final AS matematica_final
+
+    -- Notas de Matemática
+    MAX(CASE WHEN n.id_materia = 1 THEN n.informe_1_cuatrimestre1 END) AS matematica_1_1,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.informe_2_cuatrimestre1 END) AS matematica_1_2,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.nota_cuatrimestre1 END) AS matematica_1_final,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.informe_1_cuatrimestre2 END) AS matematica_2_1,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.informe_2_cuatrimestre2 END) AS matematica_2_2,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.nota_cuatrimestre2 END) AS matematica_2_final,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.nota_anual END) AS matematica_anual,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.rec_dic END) AS matematica_rec_dic,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.rec_feb END) AS matematica_rec_feb,
+    MAX(CASE WHEN n.id_materia = 1 THEN n.nota_final END) AS matematica_final,
+
+    -- Notas de Inglés
+    MAX(CASE WHEN n.id_materia = 2 THEN n.informe_1_cuatrimestre1 END) AS ingles_1_1,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.informe_2_cuatrimestre1 END) AS ingles_1_2,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.nota_cuatrimestre1 END) AS ingles_1_final,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.informe_1_cuatrimestre2 END) AS ingles_2_1,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.informe_2_cuatrimestre2 END) AS ingles_2_2,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.nota_cuatrimestre2 END) AS ingles_2_final,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.nota_anual END) AS ingles_anual,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.rec_dic END) AS ingles_rec_dic,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.rec_feb END) AS ingles_rec_feb,
+    MAX(CASE WHEN n.id_materia = 2 THEN n.nota_final END) AS ingles_final,
+
+    -- Marco Juridico
+    MAX(CASE WHEN n.id_materia = 3 THEN n.informe_1_cuatrimestre1 END) AS juridico_1_1,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.informe_2_cuatrimestre1 END) AS juridico_1_2,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.nota_cuatrimestre1 END) AS juridico_1_final,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.informe_1_cuatrimestre2 END) AS juridico_2_1,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.informe_2_cuatrimestre2 END) AS juridico_2_2,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.nota_cuatrimestre2 END) AS juridico_2_final,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.nota_anual END) AS juridico_anual,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.rec_dic END) AS juridico_rec_dic,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.rec_feb END) AS juridico_rec_feb,
+    MAX(CASE WHEN n.id_materia = 3 THEN n.nota_final END) AS juridico_final,
+
+    -- Asistencia 2
+    MAX(CASE WHEN n.id_materia = 4 THEN n.informe_1_cuatrimestre1 END) AS asistencia_1_1,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.informe_2_cuatrimestre1 END) AS asistencia_1_2,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.nota_cuatrimestre1 END) AS asistencia_1_final,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.informe_1_cuatrimestre2 END) AS asistencia_2_1,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.informe_2_cuatrimestre2 END) AS asistencia_2_2,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.nota_cuatrimestre2 END) AS asistencia_2_final,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.nota_anual END) AS asistencia_anual,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.rec_dic END) AS asistencia_rec_dic,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.rec_feb END) AS asistencia_rec_feb,
+    MAX(CASE WHEN n.id_materia = 4 THEN n.nota_final END) AS asistencia_final,
+
+    -- Autogestion
+    MAX(CASE WHEN n.id_materia = 5 THEN n.informe_1_cuatrimestre1 END) AS autogestion_1_1,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.informe_2_cuatrimestre1 END) AS autogestion_1_2,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.nota_cuatrimestre1 END) AS autogestion_1_final,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.informe_1_cuatrimestre2 END) AS autogestion_2_1,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.informe_2_cuatrimestre2 END) AS autogestion_2_2,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.nota_cuatrimestre2 END) AS autogestion_2_final,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.nota_anual END) AS autogestion_anual,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.rec_dic END) AS autogestion_rec_dic,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.rec_feb END) AS autogestion_rec_feb,
+    MAX(CASE WHEN n.id_materia = 5 THEN n.nota_final END) AS autogestion_final,
+
+    -- Hardware 4
+    MAX(CASE WHEN n.id_materia = 6 THEN n.informe_1_cuatrimestre1 END) AS hardware_1_1,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.informe_2_cuatrimestre1 END) AS hardware_1_2,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.nota_cuatrimestre1 END) AS hardware_1_final,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.informe_1_cuatrimestre2 END) AS hardware_2_1,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.informe_2_cuatrimestre2 END) AS hardware_2_2,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.nota_cuatrimestre2 END) AS hardware_2_final,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.nota_anual END) AS hardware_anual,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.rec_dic END) AS hardware_rec_dic,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.rec_feb END) AS hardware_rec_feb,
+    MAX(CASE WHEN n.id_materia = 6 THEN n.nota_final END) AS hardware_final,
+
+    -- Practicas 2
+    MAX(CASE WHEN n.id_materia = 7 THEN n.informe_1_cuatrimestre1 END) AS practicas_1_1,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.informe_2_cuatrimestre1 END) AS practicas_1_2,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.nota_cuatrimestre1 END) AS practicas_1_final,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.informe_1_cuatrimestre2 END) AS practicas_2_1,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.informe_2_cuatrimestre2 END) AS practicas_2_2,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.nota_cuatrimestre2 END) AS practicas_2_final,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.nota_anual END) AS practicas_anual,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.rec_dic END) AS practicas_rec_dic,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.rec_feb END) AS practicas_rec_feb,
+    MAX(CASE WHEN n.id_materia = 7 THEN n.nota_final END) AS practicas_final,
+
+    -- Programacion
+    MAX(CASE WHEN n.id_materia = 8 THEN n.informe_1_cuatrimestre1 END) AS programacion_1_1,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.informe_2_cuatrimestre1 END) AS programacion_1_2,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.nota_cuatrimestre1 END) AS programacion_1_final,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.informe_1_cuatrimestre2 END) AS programacion_2_1,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.informe_2_cuatrimestre2 END) AS programacion_2_2,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.nota_cuatrimestre2 END) AS programacion_2_final,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.nota_anual END) AS programacion_anual,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.rec_dic END) AS programacion_rec_dic,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.rec_feb END) AS programacion_rec_feb,
+    MAX(CASE WHEN n.id_materia = 8 THEN n.nota_final END) AS programacion_final,
+
+    -- Redes 3
+    MAX(CASE WHEN n.id_materia = 9 THEN n.informe_1_cuatrimestre1 END) AS redes_1_1,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.informe_2_cuatrimestre1 END) AS redes_1_2,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.nota_cuatrimestre1 END) AS redes_1_final,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.informe_1_cuatrimestre2 END) AS redes_2_1,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.informe_2_cuatrimestre2 END) AS redes_2_2,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.nota_cuatrimestre2 END) AS redes_2_final,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.nota_anual END) AS redes_anual,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.rec_dic END) AS redes_rec_dic,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.rec_feb END) AS redes_rec_feb,
+    MAX(CASE WHEN n.id_materia = 9 THEN n.nota_final END) AS redes_final,
+
+    -- Arduino
+    MAX(CASE WHEN n.id_materia = 10 THEN n.informe_1_cuatrimestre1 END) AS arduino_1_1,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.informe_2_cuatrimestre1 END) AS arduino_1_2,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.nota_cuatrimestre1 END) AS arduino_1_final,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.informe_1_cuatrimestre2 END) AS arduino_2_1,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.informe_2_cuatrimestre2 END) AS arduino_2_2,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.nota_cuatrimestre2 END) AS arduino_2_final,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.nota_anual END) AS arduino_anual,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.rec_dic END) AS arduino_rec_dic,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.rec_feb END) AS arduino_rec_feb,
+    MAX(CASE WHEN n.id_materia = 10 THEN n.nota_final END) AS arduino_final
+
     FROM
     notas n
-    JOIN
-    usuarios u ON n.dni_alumno = u.dni
+    JOIN usuarios u ON n.dni_alumno = u.dni
     WHERE
     u.dni = ?;
+
 `;
 
     // Ejecuta la consulta en la base de datos
@@ -50,7 +160,6 @@ router.get('/notas/:dni', (req, res) => {
 
 
 // Ruta para obtener la lista de alumnos
-// Ruta para obtener la lista de alumnos
 router.get('/alumnos', async (req, res) => {
     try {
         const query = 'SELECT nombre, apellido, dni FROM usuarios WHERE rol = "alumno"';
@@ -70,11 +179,11 @@ router.get('/alumnos', async (req, res) => {
 
 //cargar notas
 router.post('/api/cargar-nota', (req, res) => {
-    const {
-        dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1,
-        nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2,
-        nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final
-    } = req.body;
+    console.log('Datos recibidos:', req.body);
+
+    const { dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1,
+            nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2,
+            nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final } = req.body;
 
     const query = `
         INSERT INTO notas (
@@ -82,17 +191,18 @@ router.post('/api/cargar-nota', (req, res) => {
             nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2,
             nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ON DUPLICATE KEY UPDATE 
-            informe_1_cuatrimestre1 = VALUES(informe_1_cuatrimestre1),
-            informe_2_cuatrimestre1 = VALUES(informe_2_cuatrimestre1),
-            nota_cuatrimestre1 = VALUES(nota_cuatrimestre1),
-            informe_1_cuatrimestre2 = VALUES(informe_1_cuatrimestre2),
-            informe_2_cuatrimestre2 = VALUES(informe_2_cuatrimestre2),
-            nota_cuatrimestre2 = VALUES(nota_cuatrimestre2),
-            nota_anual = VALUES(nota_anual),
-            rec_dic = VALUES(rec_dic),
-            rec_feb = VALUES(rec_feb),
-            nota_final = VALUES(nota_final);
+        AS new_vals
+        ON DUPLICATE KEY UPDATE
+            informe_1_cuatrimestre1 = new_vals.informe_1_cuatrimestre1,
+            informe_2_cuatrimestre1 = new_vals.informe_2_cuatrimestre1,
+            nota_cuatrimestre1 = new_vals.nota_cuatrimestre1,
+            informe_1_cuatrimestre2 = new_vals.informe_1_cuatrimestre2,
+            informe_2_cuatrimestre2 = new_vals.informe_2_cuatrimestre2,
+            nota_cuatrimestre2 = new_vals.nota_cuatrimestre2,
+            nota_anual = new_vals.nota_anual,
+            rec_dic = new_vals.rec_dic,
+            rec_feb = new_vals.rec_feb,
+            nota_final = new_vals.nota_final;
     `;
 
     pool.query(query, [
@@ -104,9 +214,12 @@ router.post('/api/cargar-nota', (req, res) => {
             console.error('Error al guardar la nota:', error);
             res.status(500).json({ message: 'Error al guardar la nota' });
         } else {
+            console.log('Nota guardada:', results);
             res.status(200).json({ message: 'Nota guardada exitosamente' });
         }
     });
 });
+
+
 
 export default router;

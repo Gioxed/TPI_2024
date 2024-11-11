@@ -61,7 +61,6 @@
             </li>
             <li class="profile">
                 <div class="profile_details">
-                    <img src="profile.jpeg" alt="profile image">
                     <div class="profile_content">
                         <div class="name">Nombre</div>
                         <div class="designation">Random</div>
@@ -288,7 +287,7 @@
 </footer>
 
 <script>
-    const dni = '45888880';  // DNI del alumno 
+    const dni = localStorage.getItem('dni');  // DNI del alumno 
 
 // Llamada para obtener el nombre y las notas del alumno por DNI
 fetch(`/api/notas/${dni}`)

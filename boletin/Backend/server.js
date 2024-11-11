@@ -21,6 +21,8 @@ app.use('/auth', authRoutes);
 // Usar las rutas de notas
 app.use('/api', notasRoutes); 
 
+
+
 // Rutas estáticas principales para CSS, JS e imágenes
 app.use('/css', express.static(path.join(__dirname, '../css')));
 app.use('/js', express.static(path.join(__dirname, '../js')));

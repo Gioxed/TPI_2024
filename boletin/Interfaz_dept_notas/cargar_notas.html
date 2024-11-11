@@ -126,41 +126,7 @@
 </script>
 
 
-<script>
-    // Función para cargar las notas de un alumno
-function cargarNota(dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1, 
-                    nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2, 
-                    nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final) {
-    
-    fetch('/api/cargar-nota', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1, 
-            nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2, 
-            nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final
-        }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error al guardar la nota');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data.message); // Mensaje de éxito o error
-    })
-    .catch(error => {
-        console.error('Error al cargar la nota:', error);
-    });
-}
-
-</script>
-
     <script src="../js/index.js"></script>
     <script src="../js/generate-tables.js"></script>
-    <script src="../Backend/notas.js"></script>
 </body>
 </html>
