@@ -4,6 +4,7 @@ import pool from './db.js';
 
 const router = express.Router(); // Tu conexión a la base de datos
 
+
 // Ruta para obtener las notas de un alumno por su DNI
 router.get('/notas/:dni', (req, res) => {
     const dni = req.params.dni;
@@ -175,51 +176,6 @@ router.get('/alumnos', async (req, res) => {
         res.status(500).json({ message: 'Error al obtener los alumnos', error: error.message });
     }
 });
-
-
-//cargar notas
-router.post('/api/cargar-nota', (req, res) => {
-    console.log('Datos recibidos:', req.body);
-
-    const { dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1,
-            nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2,
-            nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final } = req.body;
-
-    const query = `
-        INSERT INTO notas (
-            dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1,
-            nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2,
-            nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        AS new_vals
-        ON DUPLICATE KEY UPDATE
-            informe_1_cuatrimestre1 = new_vals.informe_1_cuatrimestre1,
-            informe_2_cuatrimestre1 = new_vals.informe_2_cuatrimestre1,
-            nota_cuatrimestre1 = new_vals.nota_cuatrimestre1,
-            informe_1_cuatrimestre2 = new_vals.informe_1_cuatrimestre2,
-            informe_2_cuatrimestre2 = new_vals.informe_2_cuatrimestre2,
-            nota_cuatrimestre2 = new_vals.nota_cuatrimestre2,
-            nota_anual = new_vals.nota_anual,
-            rec_dic = new_vals.rec_dic,
-            rec_feb = new_vals.rec_feb,
-            nota_final = new_vals.nota_final;
-    `;
-
-    pool.query(query, [
-        dni_alumno, id_materia, informe_1_cuatrimestre1, informe_2_cuatrimestre1,
-        nota_cuatrimestre1, informe_1_cuatrimestre2, informe_2_cuatrimestre2,
-        nota_cuatrimestre2, nota_anual, rec_dic, rec_feb, nota_final
-    ], (error, results) => {
-        if (error) {
-            console.error('Error al guardar la nota:', error);
-            res.status(500).json({ message: 'Error al guardar la nota' });
-        } else {
-            console.log('Nota guardada:', results);
-            res.status(200).json({ message: 'Nota guardada exitosamente' });
-        }
-    });
-});
-
 
 
 export default router;

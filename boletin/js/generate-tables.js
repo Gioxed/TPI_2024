@@ -103,63 +103,9 @@
         }
 
 
-        function saveTable(dni_alumno) {  // Ahora 'dni_alumno' es un parámetro que se pasa a la función
-            const materias = {
-                matematica: 1,
-                ingles: 2,
-                juridico: 3,
-                asistencia: 4,
-                autogestion: 5,
-                hardware: 6,
-                practicas: 7,
-                programacion: 8,
-                redes: 9,
-                arduino: 10
-            };
         
-            const formData = {
-                dni_alumno: dni_alumno,  // Guardamos el DNI del alumno
-            };
         
-            // Recoger los datos de las notas
-            ['1', '2'].forEach(cuatrimestre => {
-                Object.keys(materias).forEach(materia => {
-                    formData[`informe_1_cuatrimestre${cuatrimestre}`] = document.querySelector(`input[name="${materia}_${cuatrimestre}_1"]`).value;
-                    formData[`informe_2_cuatrimestre${cuatrimestre}`] = document.querySelector(`input[name="${materia}_${cuatrimestre}_2"]`).value;
-                    formData[`nota_cuatrimestre${cuatrimestre}`] = document.querySelector(`input[name="${materia}_${cuatrimestre}_final"]`).value;
-                });
-            });
         
-            ['anual', 'rec_dic', 'rec_feb', 'final'].forEach(tipo => {
-                Object.keys(materias).forEach(materia => {
-                    formData[`nota_${tipo}`] = document.querySelector(`input[name="${materia}_${tipo}"]`).value;
-                });
-            });
-        
-            // Guardar en localStorage con el DNI como clave
-            localStorage.setItem(`notas_${dni_alumno}`, JSON.stringify(formData));
-        
-            // Enviar los datos al servidor
-            fetch('/api/cargar-nota', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.message === 'Nota guardada exitosamente') {
-                    alert('Notas guardadas correctamente');
-                } else {
-                    alert('Error al guardar las notas');
-                }
-            })
-            .catch(error => {
-                console.error('Error en la solicitud:', error);
-                alert('Error en la solicitud');
-            });
-        }
         
         
         window.onload = function() {
@@ -181,6 +127,8 @@
                 });
             }
         };
+
+        
         
         // Función para obtener el DNI del alumno desde la URL (puedes modificarlo según tu caso)
         function getDniFromUrl() {
