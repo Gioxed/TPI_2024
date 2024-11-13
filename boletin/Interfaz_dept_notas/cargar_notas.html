@@ -128,86 +128,105 @@
 
 <script>
     function saveTable(i) {
-        const materias = {
-            matematica: 1,
-            ingles: 2,
-            juridico: 3,
-            asistencia: 4,
-            autogestion: 5,
-            hardware: 6,
-            practicas: 7,
-            programacion: 8,
-            redes: 9,
-            arduino: 10
-        };
+    const dni_alumno = document.querySelector(`#dni_alumno_${i}`).value;
 
-        const dni_alumno = document.querySelector(#dni_alumno_${i}).value;
-
-        if (!dni_alumno) {
-            alert('Por favor, seleccione un alumno');
-            return;
-        }
-
-        const formData = {
-            dni_alumno: dni_alumno,
-        };
-
-        // Recoger las notas de todos los cuatrimestres y tipos
-        ['1', '2'].forEach(cuatrimestre => {
-            Object.keys(materias).forEach(materia => {
-                // Recoge las notas de los informes y las finales
-                const nota1 = document.querySelector(input[name="${materia}_${cuatrimestre}_1"]);
-                const nota2 = document.querySelector(input[name="${materia}_${cuatrimestre}_2"]);
-                const notaFinal = document.querySelector(input[name="${materia}_${cuatrimestre}_final"]);
-
-                // Si el campo existe y tiene un valor, lo agrega a formData
-                if (nota1 && nota1.value !== '') formData[${materia}_informe_${cuatrimestre}_1] = nota1.value;
-                if (nota2 && nota2.value !== '') formData[${materia}_informe_${cuatrimestre}_2] = nota2.value;
-                if (notaFinal && notaFinal.value !== '') formData[${materia}_nota_final_${cuatrimestre}] = notaFinal.value;
-            });
-        });
-
-        // Recoger las notas anuales y de recuperación
-        ['anual', 'rec_dic', 'rec_feb', 'final'].forEach(tipo => {
-            Object.keys(materias).forEach(materia => {
-                const campoNota = document.querySelector(input[name="${materia}_${tipo}"]);
-                if (campoNota && campoNota.value !== '') {
-                    formData[${materia}_${tipo}] = campoNota.value;
-                }
-            });
-        });
-
-        console.log('Datos enviados:', formData);
-
-        // Almacenar las notas en localStorage (opcional)
-        localStorage.setItem(notas_${dni_alumno}, JSON.stringify(formData));
-
-        // Enviar los datos al servidor
-        fetch('/api/cargar-nota', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al guardar las notas');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.message === 'Nota guardada exitosamente') {
-                alert('Notas guardadas correctamente');
-            } else {
-                alert('Error al guardar las notas');
-            }
-        })
-        .catch(error => {
-            alert(error.message);
-        });
+    if (!dni_alumno) {
+        alert('Por favor, seleccione un alumno');
+        return;
     }
+
+    const formData = {
+        dni_alumno: dni_alumno,
+        
+        // cuatrimestre 1 informe 1
+        matematica_informe_1_1: document.querySelector(`input[name="matematica_1_1"]`)?.value || null,
+        ingles_informe_1_1: document.querySelector(`input[name="ingles_1_1"]`)?.value || null,
+        juridico_informe_1_1: document.querySelector(`input[name="juridico_1_1"]`)?.value || null,
+        asistencia_informe_1_1: document.querySelector(`input[name="asistencia_1_1"]`)?.value || null,
+        autogestion_informe_1_1: document.querySelector(`input[name="autogestion_1_1"]`)?.value || null,
+        hardware_informe_1_1: document.querySelector(`input[name="hardware_1_1"]`)?.value || null,
+        practicas_informe_1_1: document.querySelector(`input[name="practicas_1_1"]`)?.value || null,
+        programacion_informe_1_1: document.querySelector(`input[name="programacion_1_1"]`)?.value || null,
+        redes_informe_1_1: document.querySelector(`input[name="redes_1_1"]`)?.value || null,
+        arduino_informe_1_1: document.querySelector(`input[name="arduino_1_1"]`)?.value || null,
+
+        // Cuatrimestre 1 Informe 2
+    matematica_informe_1_2: document.querySelector(`input[name="matematica_1_2"]`)?.value || null,
+    ingles_informe_1_2: document.querySelector(`input[name="ingles_1_2"]`)?.value || null,
+    juridico_informe_1_2: document.querySelector(`input[name="juridico_1_2"]`)?.value || null,
+    asistencia_informe_1_2: document.querySelector(`input[name="asistencia_1_2"]`)?.value || null,
+    autogestion_informe_1_2: document.querySelector(`input[name="autogestion_1_2"]`)?.value || null,
+    hardware_informe_1_2: document.querySelector(`input[name="hardware_1_2"]`)?.value || null,
+    practicas_informe_1_2: document.querySelector(`input[name="practicas_1_2"]`)?.value || null,
+    programacion_informe_1_2: document.querySelector(`input[name="programacion_1_2"]`)?.value || null,
+    redes_informe_1_2: document.querySelector(`input[name="redes_1_2"]`)?.value || null,
+    arduino_informe_1_2: document.querySelector(`input[name="arduino_1_2"]`)?.value || null,
+
+    // Nota Cuatrimestre 1
+    matematica_nota_cuatrimestre1: document.querySelector(`input[name="matematica_1_final"]`)?.value || null,
+    ingles_nota_cuatrimestre1: document.querySelector(`input[name="ingles_1_final"]`)?.value || null,
+    juridico_nota_cuatrimestre1: document.querySelector(`input[name="juridico_1_final"]`)?.value || null,
+    asistencia_nota_cuatrimestre1: document.querySelector(`input[name="asistencia_1_final"]`)?.value || null,
+    autogestion_nota_cuatrimestre1: document.querySelector(`input[name="autogestion_1_final"]`)?.value || null,
+    hardware_nota_cuatrimestre1: document.querySelector(`input[name="hardware_1_final"]`)?.value || null,
+    practicas_nota_cuatrimestre1: document.querySelector(`input[name="practicas_1_final"]`)?.value || null,
+    programacion_nota_cuatrimestre1: document.querySelector(`input[name="programacion_1_final"]`)?.value || null,
+    redes_nota_cuatrimestre1: document.querySelector(`input[name="redes_1_final"]`)?.value || null,
+    arduino_nota_cuatrimestre1: document.querySelector(`input[name="arduino_1_final"]`)?.value || null,
+        // cuatrimestre 2 informe 1 y 2
+        // nota cuatrimestre 2, nota anual, recuperatorio diciembre, recuperatorio febrero, nota final
+
+    };
+
+    console.log('Datos enviados:', formData);
+
+    fetch('/api/cargar-nota', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al guardar las notas');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.message === 'Nota guardada exitosamente') {
+            alert('Notas guardadas correctamente');
+        } else {
+            alert('Error al guardar las notas');
+        }
+    })
+    .catch(error => {
+        alert(error.message);
+    });
+}
+
 </script>
+
+<!-- 
+
+        matematica_informe_2_1: document.querySelector(`input[name="matematica_2_1"]`).value || null,
+        matematica_informe_2_2: document.querySelector(`input[name="matematica_2_2"]`).value || null,
+        matematica_nota_final_2: document.querySelector(`input[name="matematica_2_final"]`).value || null,
+        matematica_anual: document.querySelector(`input[name="matematica_anual"]`).value || null,
+        matematica_rec_dic: document.querySelector(`input[name="matematica_rec_dic"]`).value || null,
+        matematica_rec_feb: document.querySelector(`input[name="matematica_rec_feb"]`).value || null,
+        matematica_final: document.querySelector(`input[name="matematica_final"]`).value || null,
+
+        ingles_informe_2_1: document.querySelector(`input[name="ingles_2_1"]`).value || null,
+        ingles_informe_2_2: document.querySelector(`input[name="ingles_2_2"]`).value || null,
+        ingles_nota_final_2: document.querySelector(`input[name="ingles_2_final"]`).value || null,
+        ingles_anual: document.querySelector(`input[name="ingles_anual"]`).value || null,
+        ingles_rec_dic: document.querySelector(`input[name="ingles_rec_dic"]`).value || null,
+        ingles_rec_feb: document.querySelector(`input[name="ingles_rec_feb"]`).value || null,
+        ingles_final: document.querySelector(`input[name="ingles_final"]`).value || null,
+
+    -->
+
 
 
 
