@@ -33,63 +33,145 @@
                         <td class="column10 style5 s">TÉCNICA: Redes 3</td>
                         <td class="column11 style5 s">EDI: Arduino 3</td>
                     </tr>
-                    ${['1', '2'].map(cuatrimestre => `
-                        <tr class="row2">
-                            <td class="column0 style6 s" rowspan="3">${cuatrimestre}° Cuatrimestre</td>
-                            <td class="column1 style7 s">1° Informe</td>
-                            <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_${cuatrimestre}_1" id="matematica_${cuatrimestre}_1"></td>
-                            <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_${cuatrimestre}_1" id="ingles_${cuatrimestre}_1"></td>
-                            <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_${cuatrimestre}_1" id="juridico_${cuatrimestre}_1"></td>
-                            <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_${cuatrimestre}_1" id="asistencia_${cuatrimestre}_1"></td>
-                            <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_${cuatrimestre}_1" id="autogestion_${cuatrimestre}_1"></td>
-                            <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_${cuatrimestre}_1" id="hardware_${cuatrimestre}_1"></td>
-                            <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_${cuatrimestre}_1" id="practicas_${cuatrimestre}_1"></td>
-                            <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_${cuatrimestre}_1" id="programacion_${cuatrimestre}_1"></td>
-                            <td class="column10 style8"><input min="0" max="10" type="number" name="redes_${cuatrimestre}_1" id="redes_${cuatrimestre}_1"></td>
-                            <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_${cuatrimestre}_1" id="arduino_${cuatrimestre}_1"></td>
-                        </tr>
-                        <tr>
-                            <td class="column1 style7 s">2° Informe</td>
-                            <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_${cuatrimestre}_2" id="matematica_${cuatrimestre}_2"></td>
-                            <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_${cuatrimestre}_2" id="ingles_${cuatrimestre}_2"></td>
-                            <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_${cuatrimestre}_2" id="juridico_${cuatrimestre}_2"></td>
-                            <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_${cuatrimestre}_2" id="asistencia_${cuatrimestre}_2"></td>
-                            <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_${cuatrimestre}_2" id="autogestion_${cuatrimestre}_2"></td>
-                            <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_${cuatrimestre}_2" id="hardware_${cuatrimestre}_2"></td>
-                            <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_${cuatrimestre}_2" id="practicas_${cuatrimestre}_2"></td>
-                            <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_${cuatrimestre}_2" id="programacion_${cuatrimestre}_2"></td>
-                            <td class="column10 style8"><input min="0" max="10" type="number" name="redes_${cuatrimestre}_2" id="redes_${cuatrimestre}_2"></td>
-                            <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_${cuatrimestre}_2" id="arduino_${cuatrimestre}_2"></td>
-                        </tr>
-                        <tr>
-                            <td class="column1 style7 s">NOTA</td>
-                            <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_${cuatrimestre}_final" id="matematica_${cuatrimestre}_final"></td>
-                            <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_${cuatrimestre}_final" id="ingles_${cuatrimestre}_final"></td>
-                            <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_${cuatrimestre}_final" id="juridico_${cuatrimestre}_final"></td>
-                            <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_${cuatrimestre}_final" id="asistencia_${cuatrimestre}_final"></td>
-                            <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_${cuatrimestre}_final" id="autogestion_${cuatrimestre}_final"></td>
-                            <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_${cuatrimestre}_final" id="hardware_${cuatrimestre}_final"></td>
-                            <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_${cuatrimestre}_final" id="practicas_${cuatrimestre}_final"></td>
-                            <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_${cuatrimestre}_final" id="programacion_${cuatrimestre}_final"></td>
-                            <td class="column10 style8"><input min="0" max="10" type="number" name="redes_${cuatrimestre}_final" id="redes_${cuatrimestre}_final"></td>
-                            <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_${cuatrimestre}_final" id="arduino_${cuatrimestre}_final"></td>
-                        </tr>
-                    `).join('')}
-                    ${['anual', 'rec_dic', 'rec_feb', 'final'].map(tipo => `
-                        <tr>
-                            <td class="column0 style7 s" colspan="2">${tipo === 'anual' ? 'Nota Anual' : tipo === 'rec_dic' ? 'Rec Dic' : tipo === 'rec_feb' ? 'Rec Feb' : 'Nota Final'}</td>
-                            <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_${tipo}" id="matematica_${tipo}"></td>
-                            <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_${tipo}" id="ingles_${tipo}"></td>
-                            <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_${tipo}" id="juridico_${tipo}"></td>
-                            <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_${tipo}" id="asistencia_${tipo}"></td>
-                            <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_${tipo}" id="autogestion_${tipo}"></td>
-                            <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_${tipo}" id="hardware_${tipo}"></td>
-                            <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_${tipo}" id="practicas_${tipo}"></td>
-                            <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_${tipo}" id="programacion_${tipo}"></td>
-                            <td class="column10 style8"><input min="0" max="10" type="number" name="redes_${tipo}" id="redes_${tipo}"></td>
-                            <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_${tipo}" id="arduino_${tipo}"></td>
-                        </tr>
-                    `).join('')}
+                    
+                    <tr class="row2">
+                    <td class="column0 style6 s" rowspan="3">1° Cuatrimestre</td>
+                    <td class="column1 style7 s">1° Informe</td>
+                    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_1_1" id="matematica_1_1"></td>
+                    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_1_1" id="ingles_1_1"></td>
+                    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_1_1" id="juridico_1_1"></td>
+                    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_1_1" id="asistencia_1_1"></td>
+                    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_1_1" id="autogestion_1_1"></td>
+                    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_1_1" id="hardware_1_1"></td>
+                    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_1_1" id="practicas_1_1"></td>
+                    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_1_1" id="programacion_1_1"></td>
+                    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_1_1" id="redes_1_1"></td>
+                    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_1_1" id="arduino_1_1"></td>
+                    </tr>
+
+                    <tr>
+                    <td class="column1 style7 s">2° Informe</td>
+                    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_1_2" id="matematica_1_2"></td>
+                    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_1_2" id="ingles_1_2"></td>
+                    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_1_2" id="juridico_1_2"></td>
+                    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_1_2" id="asistencia_1_2"></td>
+                    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_1_2" id="autogestion_1_2"></td>
+                    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_1_2" id="hardware_1_2"></td>
+                    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_1_2" id="practicas_1_2"></td>
+                    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_1_2" id="programacion_1_2"></td>
+                    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_1_2" id="redes_1_2"></td>
+                    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_1_2" id="arduino_1_2"></td>
+                    </tr>
+                    
+                    <tr>
+                    <td class="column1 style7 s">NOTA</td>
+                    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_1_final" id="matematica_1_final"></td>
+                    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_1_final" id="ingles_1_final"></td>
+                    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_1_final" id="juridico_1_final"></td>
+                    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_1_final" id="asistencia_1_final"></td>
+                    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_1_final" id="autogestion_1_final"></td>
+                    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_1_final" id="hardware_1_final"></td>
+                    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_1_final" id="practicas_1_final"></td>
+                    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_1_final" id="programacion_1_final"></td>
+                    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_1_final" id="redes_1_final"></td>
+                    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_1_final" id="arduino_1_final"></td>
+                    </tr>
+<!-- 2° Cuatrimestre -->
+                    <tr class="row2">
+                    <td class="column0 style6 s" rowspan="3">2° Cuatrimestre</td>
+                    <td class="column1 style7 s">1° Informe</td>
+                    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_2_1" id="matematica_2_1"></td>
+                    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_2_1" id="ingles_2_1"></td>
+                    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_2_1" id="juridico_2_1"></td>
+                    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_2_1" id="asistencia_2_1"></td>
+                    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_2_1" id="autogestion_2_1"></td>
+                    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_2_1" id="hardware_2_1"></td>
+                    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_2_1" id="practicas_2_1"></td>
+                    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_2_1" id="programacion_2_1"></td>
+                    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_2_1" id="redes_2_1"></td>
+                    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_2_1" id="arduino_2_1"></td>
+                    </tr>
+                    
+                    <tr>
+                    <td class="column1 style7 s">2° Informe</td>
+                    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_2_2" id="matematica_2_2"></td>
+                    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_2_2" id="ingles_2_2"></td>
+                    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_2_2" id="juridico_2_2"></td>
+                    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_2_2" id="asistencia_2_2"></td>
+                    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_2_2" id="autogestion_2_2"></td>
+                    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_2_2" id="hardware_2_2"></td>
+                    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_2_2" id="practicas_2_2"></td>
+                    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_2_2" id="programacion_2_2"></td>
+                    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_2_2" id="redes_2_2"></td>
+                    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_2_2" id="arduino_2_2"></td>
+                    </tr>
+                    <tr>
+                    <td class="column1 style7 s">NOTA</td>
+                    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_2_final" id="matematica_2_final"></td>
+                    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_2_final" id="ingles_2_final"></td>
+                    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_2_final" id="juridico_2_final"></td>
+                    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_2_final" id="asistencia_2_final"></td>
+                    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_2_final" id="autogestion_2_final"></td>
+                    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_2_final" id="hardware_2_final"></td>
+                    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_2_final" id="practicas_2_final"></td>
+                    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_2_final" id="programacion_2_final"></td>
+                    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_2_final" id="redes_2_final"></td>
+                    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_2_final" id="arduino_2_final"></td>
+                    </tr>
+            
+                    <tr>
+    <td class="column0 style7 s" colspan="2">Nota Anual</td>
+    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_anual" id="matematica_anual"></td>
+    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_anual" id="ingles_anual"></td>
+    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_anual" id="juridico_anual"></td>
+    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_anual" id="asistencia_anual"></td>
+    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_anual" id="autogestion_anual"></td>
+    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_anual" id="hardware_anual"></td>
+    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_anual" id="practicas_anual"></td>
+    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_anual" id="programacion_anual"></td>
+    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_anual" id="redes_anual"></td>
+    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_anual" id="arduino_anual"></td>
+</tr>
+<tr>
+    <td class="column0 style7 s" colspan="2">Rec Dic</td>
+    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_rec_dic" id="matematica_rec_dic"></td>
+    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_rec_dic" id="ingles_rec_dic"></td>
+    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_rec_dic" id="juridico_rec_dic"></td>
+    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_rec_dic" id="asistencia_rec_dic"></td>
+    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_rec_dic" id="autogestion_rec_dic"></td>
+    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_rec_dic" id="hardware_rec_dic"></td>
+    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_rec_dic" id="practicas_rec_dic"></td>
+    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_rec_dic" id="programacion_rec_dic"></td>
+    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_rec_dic" id="redes_rec_dic"></td>
+    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_rec_dic" id="arduino_rec_dic"></td>
+</tr>
+<tr>
+    <td class="column0 style7 s" colspan="2">Rec Feb</td>
+    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_rec_feb" id="matematica_rec_feb"></td>
+    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_rec_feb" id="ingles_rec_feb"></td>
+    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_rec_feb" id="juridico_rec_feb"></td>
+    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_rec_feb" id="asistencia_rec_feb"></td>
+    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_rec_feb" id="autogestion_rec_feb"></td>
+    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_rec_feb" id="hardware_rec_feb"></td>
+    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_rec_feb" id="practicas_rec_feb"></td>
+    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_rec_feb" id="programacion_rec_feb"></td>
+    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_rec_feb" id="redes_rec_feb"></td>
+    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_rec_feb" id="arduino_rec_feb"></td>
+</tr>
+<tr>
+    <td class="column0 style7 s" colspan="2">Nota Final</td>
+    <td class="column2 style8"><input min="0" max="10" type="number" name="matematica_final" id="matematica_final"></td>
+    <td class="column3 style8"><input min="0" max="10" type="number" name="ingles_final" id="ingles_final"></td>
+    <td class="column4 style8"><input min="0" max="10" type="number" name="juridico_final" id="juridico_final"></td>
+    <td class="column5 style8"><input min="0" max="10" type="number" name="asistencia_final" id="asistencia_final"></td>
+    <td class="column6 style8"><input min="0" max="10" type="number" name="autogestion_final" id="autogestion_final"></td>
+    <td class="column7 style8"><input min="0" max="10" type="number" name="hardware_final" id="hardware_final"></td>
+    <td class="column8 style8"><input min="0" max="10" type="number" name="practicas_final" id="practicas_final"></td>
+    <td class="column9 style8"><input min="0" max="10" type="number" name="programacion_final" id="programacion_final"></td>
+    <td class="column10 style8"><input min="0" max="10" type="number" name="redes_final" id="redes_final"></td>
+    <td class="column11 style8"><input min="0" max="10" type="number" name="arduino_final" id="arduino_final"></td>
+</tr>
+
                 </tbody>
             </table>
             <button type="button" class="save-button" onclick="saveTable(${i})">Guardar</button> <!-- Botón de Guardar -->

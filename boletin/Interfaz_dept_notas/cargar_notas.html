@@ -32,7 +32,6 @@
             <li><a href="Preguntas.html"><i class="bx bx-chat"></i><span class="link_name">Preguntas frecuentes</span></a></li>
             <li class="profile">
                 <div class="profile_details">
-                    <img src="profile.jpeg" alt="profile image">
                     <div class="profile_content">
                         <div class="name">Nombre</div>
                         <div class="designation">Random</div>
@@ -118,6 +117,132 @@
                 });
             }
         }
+
+        // Recuperar datos guardados en localStorage 
+        for (let i = 1; i <= 25; i++) { const savedData = JSON.parse(localStorage.getItem(`formData_${i}`)); if (savedData) { 
+            // Cargar datos en los inputs correspondientes 
+            document.querySelector(`#dni_alumno_${i}`).value = savedData.dni_alumno; 
+            document.querySelector(`input[name="matematica_1_1"]`).value = savedData.matematica_informe_1_1; 
+            document.querySelector(`input[name="ingles_1_1"]`).value = savedData.ingles_informe_1_1;
+            document.querySelector(`input[name="juridico_1_1"]`).value = savedData.juridico_informe_1_1;
+            document.querySelector(`input[name="asistencia_1_1"]`).value = savedData.asistencia_informe_1_1;
+            document.querySelector(`input[name="autogestion_1_1"]`).value = savedData.autogestion_informe_1_1;
+            document.querySelector(`input[name="hardware_1_1"]`).value = savedData.hardware_informe_1_1;
+            document.querySelector(`input[name="practicas_1_1"]`).value = savedData.practicas_informe_1_1;
+            document.querySelector(`input[name="programacion_1_1"]`).value = savedData.programacion_informe_1_1;
+            document.querySelector(`input[name="redes_1_1"]`).value = savedData.redes_informe_1_1;
+            document.querySelector(`input[name="arduino_1_1"]`).value = savedData.arduino_informe_1_1;
+
+    //         // Cuatrimestre 1 Informe 2
+    // matematica_informe_1_2: document.querySelector(`input[name="matematica_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // ingles_informe_1_2: document.querySelector(`input[name="ingles_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // juridico_informe_1_2: document.querySelector(`input[name="juridico_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // asistencia_informe_1_2: document.querySelector(`input[name="asistencia_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // autogestion_informe_1_2: document.querySelector(`input[name="autogestion_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // hardware_informe_1_2: document.querySelector(`input[name="hardware_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // practicas_informe_1_2: document.querySelector(`input[name="practicas_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // programacion_informe_1_2: document.querySelector(`input[name="programacion_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // redes_informe_1_2: document.querySelector(`input[name="redes_1_2"]`)?.value = savedData.ingles_informe_1_1;
+    // arduino_informe_1_2: document.querySelector(`input[name="arduino_1_2"]`)?.value = savedData.ingles_informe_1_1;
+
+    // // Nota Cuatrimestre 1
+    // matematica_nota_cuatrimestre1: document.querySelector(`input[name="matematica_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // ingles_nota_cuatrimestre1: document.querySelector(`input[name="ingles_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // juridico_nota_cuatrimestre1: document.querySelector(`input[name="juridico_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // asistencia_nota_cuatrimestre1: document.querySelector(`input[name="asistencia_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // autogestion_nota_cuatrimestre1: document.querySelector(`input[name="autogestion_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // hardware_nota_cuatrimestre1: document.querySelector(`input[name="hardware_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // practicas_nota_cuatrimestre1: document.querySelector(`input[name="practicas_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // programacion_nota_cuatrimestre1: document.querySelector(`input[name="programacion_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // redes_nota_cuatrimestre1: document.querySelector(`input[name="redes_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    // arduino_nota_cuatrimestre1: document.querySelector(`input[name="arduino_1_final"]`)?.value = savedData.ingles_informe_1_1;
+    
+    //     // cuatrimestre 2 informe 1
+    //     matematica_informe_2_1: document.querySelector(`input[name="matematica_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     ingles_informe_2_1: document.querySelector(`input[name="ingles_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     juridico_informe_2_1: document.querySelector(`input[name="juridico_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     asistencia_informe_2_1: document.querySelector(`input[name="asistencia_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     autogestion_informe_2_1: document.querySelector(`input[name="autogestion_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     hardware_informe_2_1: document.querySelector(`input[name="hardware_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     practicas_informe_2_1: document.querySelector(`input[name="practicas_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     programacion_informe_2_1: document.querySelector(`input[name="programacion_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     redes_informe_2_1: document.querySelector(`input[name="redes_2_1"]`)?.value = savedData.ingles_informe_1_1;
+    //     arduino_informe_2_1: document.querySelector(`input[name="arduino_2_1"]`)?.value = savedData.ingles_informe_1_1;
+
+    //     // Cuatrimestre 2 Informe 2
+    // matematica_informe_2_2: document.querySelector(`input[name="matematica_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // ingles_informe_2_2: document.querySelector(`input[name="ingles_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // juridico_informe_2_2: document.querySelector(`input[name="juridico_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // asistencia_informe_2_2: document.querySelector(`input[name="asistencia_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // autogestion_informe_2_2: document.querySelector(`input[name="autogestion_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // hardware_informe_2_2: document.querySelector(`input[name="hardware_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // practicas_informe_2_2: document.querySelector(`input[name="practicas_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // programacion_informe_2_2: document.querySelector(`input[name="programacion_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // redes_informe_2_2: document.querySelector(`input[name="redes_2_2"]`)?.value = savedData.ingles_informe_1_1;
+    // arduino_informe_2_2: document.querySelector(`input[name="arduino_2_2"]`)?.value = savedData.ingles_informe_1_1;
+
+    // // Nota Cuatrimestre 2
+    // matematica_nota_cuatrimestre2: document.querySelector(`input[name="matematica_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // ingles_nota_cuatrimestre2: document.querySelector(`input[name="ingles_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // juridico_nota_cuatrimestre2: document.querySelector(`input[name="juridico_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // asistencia_nota_cuatrimestre2: document.querySelector(`input[name="asistencia_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // autogestion_nota_cuatrimestre2: document.querySelector(`input[name="autogestion_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // hardware_nota_cuatrimestre2: document.querySelector(`input[name="hardware_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // practicas_nota_cuatrimestre2: document.querySelector(`input[name="practicas_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // programacion_nota_cuatrimestre2: document.querySelector(`input[name="programacion_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // redes_nota_cuatrimestre2: document.querySelector(`input[name="redes_2_final"]`)?.value = savedData.ingles_informe_1_1;
+    // arduino_nota_cuatrimestre2: document.querySelector(`input[name="arduino_2_final"]`)?.value = savedData.ingles_informe_1_1;
+
+    //     // NOTA ANUAL
+    //     matematica_nota_anual: document.querySelector(`input[name="matematica_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     ingles_nota_anual: document.querySelector(`input[name="ingles_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     juridico_nota_anual: document.querySelector(`input[name="juridico_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     asistencia_nota_anual: document.querySelector(`input[name="asistencia_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     autogestion_nota_anual: document.querySelector(`input[name="autogestion_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     hardware_nota_anual: document.querySelector(`input[name="hardware_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     practicas_nota_anual: document.querySelector(`input[name="practicas_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     programacion_nota_anual: document.querySelector(`input[name="programacion_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     redes_nota_anual: document.querySelector(`input[name="redes_anual"]`)?.value = savedData.ingles_informe_1_1;
+    //     arduino_nota_anual: document.querySelector(`input[name="arduino_anual"]`)?.value = savedData.ingles_informe_1_1;
+
+    //     // RECUPERATORIO DICIEMBRE
+    // matematica_rec_dic: document.querySelector(`input[name="matematica_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // ingles_rec_dic: document.querySelector(`input[name="ingles_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // juridico_rec_dic: document.querySelector(`input[name="juridico_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // asistencia_rec_dic: document.querySelector(`input[name="asistencia_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // autogestion_rec_dic: document.querySelector(`input[name="autogestion_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // hardware_rec_dic: document.querySelector(`input[name="hardware_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // practicas_rec_dic: document.querySelector(`input[name="practicas_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // programacion_rec_dic: document.querySelector(`input[name="programacion_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // redes_rec_dic: document.querySelector(`input[name="redes_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+    // arduino_rec_dic: document.querySelector(`input[name="arduino_rec_dic"]`)?.value = savedData.ingles_informe_1_1;
+
+    // // RECUPERATORIO FEBRERO
+    // matematica_rec_feb: document.querySelector(`input[name="matematica_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // ingles_rec_feb: document.querySelector(`input[name="ingles_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // juridico_rec_feb: document.querySelector(`input[name="juridico_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // asistencia_rec_feb: document.querySelector(`input[name="asistencia_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // autogestion_rec_feb: document.querySelector(`input[name="autogestion_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // hardware_rec_feb: document.querySelector(`input[name="hardware_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // practicas_rec_feb: document.querySelector(`input[name="practicas_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // programacion_rec_feb: document.querySelector(`input[name="programacion_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // redes_rec_feb: document.querySelector(`input[name="redes_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    // arduino_rec_feb: document.querySelector(`input[name="arduino_rec_feb"]`)?.value = savedData.ingles_informe_1_1;
+    
+    //     // NOTA FINAL
+    //     matematica_nota_final: document.querySelector(`input[name="matematica_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     ingles_nota_final: document.querySelector(`input[name="ingles_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     juridico_nota_final: document.querySelector(`input[name="juridico_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     asistencia_nota_final: document.querySelector(`input[name="asistencia_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     autogestion_nota_final: document.querySelector(`input[name="autogestion_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     hardware_nota_final: document.querySelector(`input[name="hardware_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     practicas_nota_final: document.querySelector(`input[name="practicas_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     programacion_nota_final: document.querySelector(`input[name="programacion_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     redes_nota_final: document.querySelector(`input[name="redes_final"]`)?.value = savedData.ingles_informe_1_1;
+    //     arduino_nota_final: document.querySelector(`input[name="arduino_final"]`)?.value = savedData.ingles_informe_1_1;
+
+            } 
+        }
     } catch (error) {
         console.error('Error al cargar los alumnos:', error);
     }
@@ -173,12 +298,97 @@
     programacion_nota_cuatrimestre1: document.querySelector(`input[name="programacion_1_final"]`)?.value || null,
     redes_nota_cuatrimestre1: document.querySelector(`input[name="redes_1_final"]`)?.value || null,
     arduino_nota_cuatrimestre1: document.querySelector(`input[name="arduino_1_final"]`)?.value || null,
-        // cuatrimestre 2 informe 1 y 2
-        // nota cuatrimestre 2, nota anual, recuperatorio diciembre, recuperatorio febrero, nota final
+    
+        // cuatrimestre 2 informe 1
+        matematica_informe_2_1: document.querySelector(`input[name="matematica_2_1"]`)?.value || null,
+        ingles_informe_2_1: document.querySelector(`input[name="ingles_2_1"]`)?.value || null,
+        juridico_informe_2_1: document.querySelector(`input[name="juridico_2_1"]`)?.value || null,
+        asistencia_informe_2_1: document.querySelector(`input[name="asistencia_2_1"]`)?.value || null,
+        autogestion_informe_2_1: document.querySelector(`input[name="autogestion_2_1"]`)?.value || null,
+        hardware_informe_2_1: document.querySelector(`input[name="hardware_2_1"]`)?.value || null,
+        practicas_informe_2_1: document.querySelector(`input[name="practicas_2_1"]`)?.value || null,
+        programacion_informe_2_1: document.querySelector(`input[name="programacion_2_1"]`)?.value || null,
+        redes_informe_2_1: document.querySelector(`input[name="redes_2_1"]`)?.value || null,
+        arduino_informe_2_1: document.querySelector(`input[name="arduino_2_1"]`)?.value || null,
+
+        // Cuatrimestre 2 Informe 2
+    matematica_informe_2_2: document.querySelector(`input[name="matematica_2_2"]`)?.value || null,
+    ingles_informe_2_2: document.querySelector(`input[name="ingles_2_2"]`)?.value || null,
+    juridico_informe_2_2: document.querySelector(`input[name="juridico_2_2"]`)?.value || null,
+    asistencia_informe_2_2: document.querySelector(`input[name="asistencia_2_2"]`)?.value || null,
+    autogestion_informe_2_2: document.querySelector(`input[name="autogestion_2_2"]`)?.value || null,
+    hardware_informe_2_2: document.querySelector(`input[name="hardware_2_2"]`)?.value || null,
+    practicas_informe_2_2: document.querySelector(`input[name="practicas_2_2"]`)?.value || null,
+    programacion_informe_2_2: document.querySelector(`input[name="programacion_2_2"]`)?.value || null,
+    redes_informe_2_2: document.querySelector(`input[name="redes_2_2"]`)?.value || null,
+    arduino_informe_2_2: document.querySelector(`input[name="arduino_2_2"]`)?.value || null,
+
+    // Nota Cuatrimestre 2
+    matematica_nota_cuatrimestre2: document.querySelector(`input[name="matematica_2_final"]`)?.value || null,
+    ingles_nota_cuatrimestre2: document.querySelector(`input[name="ingles_2_final"]`)?.value || null,
+    juridico_nota_cuatrimestre2: document.querySelector(`input[name="juridico_2_final"]`)?.value || null,
+    asistencia_nota_cuatrimestre2: document.querySelector(`input[name="asistencia_2_final"]`)?.value || null,
+    autogestion_nota_cuatrimestre2: document.querySelector(`input[name="autogestion_2_final"]`)?.value || null,
+    hardware_nota_cuatrimestre2: document.querySelector(`input[name="hardware_2_final"]`)?.value || null,
+    practicas_nota_cuatrimestre2: document.querySelector(`input[name="practicas_2_final"]`)?.value || null,
+    programacion_nota_cuatrimestre2: document.querySelector(`input[name="programacion_2_final"]`)?.value || null,
+    redes_nota_cuatrimestre2: document.querySelector(`input[name="redes_2_final"]`)?.value || null,
+    arduino_nota_cuatrimestre2: document.querySelector(`input[name="arduino_2_final"]`)?.value || null,
+
+        // NOTA ANUAL
+        matematica_nota_anual: document.querySelector(`input[name="matematica_anual"]`)?.value || null,
+        ingles_nota_anual: document.querySelector(`input[name="ingles_anual"]`)?.value || null,
+        juridico_nota_anual: document.querySelector(`input[name="juridico_anual"]`)?.value || null,
+        asistencia_nota_anual: document.querySelector(`input[name="asistencia_anual"]`)?.value || null,
+        autogestion_nota_anual: document.querySelector(`input[name="autogestion_anual"]`)?.value || null,
+        hardware_nota_anual: document.querySelector(`input[name="hardware_anual"]`)?.value || null,
+        practicas_nota_anual: document.querySelector(`input[name="practicas_anual"]`)?.value || null,
+        programacion_nota_anual: document.querySelector(`input[name="programacion_anual"]`)?.value || null,
+        redes_nota_anual: document.querySelector(`input[name="redes_anual"]`)?.value || null,
+        arduino_nota_anual: document.querySelector(`input[name="arduino_anual"]`)?.value || null,
+
+        // RECUPERATORIO DICIEMBRE
+    matematica_rec_dic: document.querySelector(`input[name="matematica_rec_dic"]`)?.value || null,
+    ingles_rec_dic: document.querySelector(`input[name="ingles_rec_dic"]`)?.value || null,
+    juridico_rec_dic: document.querySelector(`input[name="juridico_rec_dic"]`)?.value || null,
+    asistencia_rec_dic: document.querySelector(`input[name="asistencia_rec_dic"]`)?.value || null,
+    autogestion_rec_dic: document.querySelector(`input[name="autogestion_rec_dic"]`)?.value || null,
+    hardware_rec_dic: document.querySelector(`input[name="hardware_rec_dic"]`)?.value || null,
+    practicas_rec_dic: document.querySelector(`input[name="practicas_rec_dic"]`)?.value || null,
+    programacion_rec_dic: document.querySelector(`input[name="programacion_rec_dic"]`)?.value || null,
+    redes_rec_dic: document.querySelector(`input[name="redes_rec_dic"]`)?.value || null,
+    arduino_rec_dic: document.querySelector(`input[name="arduino_rec_dic"]`)?.value || null,
+
+    // RECUPERATORIO FEBRERO
+    matematica_rec_feb: document.querySelector(`input[name="matematica_rec_feb"]`)?.value || null,
+    ingles_rec_feb: document.querySelector(`input[name="ingles_rec_feb"]`)?.value || null,
+    juridico_rec_feb: document.querySelector(`input[name="juridico_rec_feb"]`)?.value || null,
+    asistencia_rec_feb: document.querySelector(`input[name="asistencia_rec_feb"]`)?.value || null,
+    autogestion_rec_feb: document.querySelector(`input[name="autogestion_rec_feb"]`)?.value || null,
+    hardware_rec_feb: document.querySelector(`input[name="hardware_rec_feb"]`)?.value || null,
+    practicas_rec_feb: document.querySelector(`input[name="practicas_rec_feb"]`)?.value || null,
+    programacion_rec_feb: document.querySelector(`input[name="programacion_rec_feb"]`)?.value || null,
+    redes_rec_feb: document.querySelector(`input[name="redes_rec_feb"]`)?.value || null,
+    arduino_rec_feb: document.querySelector(`input[name="arduino_rec_feb"]`)?.value || null,
+    
+        // NOTA FINAL
+        matematica_nota_final: document.querySelector(`input[name="matematica_final"]`)?.value || null,
+        ingles_nota_final: document.querySelector(`input[name="ingles_final"]`)?.value || null,
+        juridico_nota_final: document.querySelector(`input[name="juridico_final"]`)?.value || null,
+        asistencia_nota_final: document.querySelector(`input[name="asistencia_final"]`)?.value || null,
+        autogestion_nota_final: document.querySelector(`input[name="autogestion_final"]`)?.value || null,
+        hardware_nota_final: document.querySelector(`input[name="hardware_final"]`)?.value || null,
+        practicas_nota_final: document.querySelector(`input[name="practicas_final"]`)?.value || null,
+        programacion_nota_final: document.querySelector(`input[name="programacion_final"]`)?.value || null,
+        redes_nota_final: document.querySelector(`input[name="redes_final"]`)?.value || null,
+        arduino_nota_final: document.querySelector(`input[name="arduino_final"]`)?.value || null,
 
     };
 
     console.log('Datos enviados:', formData);
+
+    // Guardar datos en localStorage 
+    localStorage.setItem(`formData_${i}`, JSON.stringify(formData));
 
     fetch('/api/cargar-nota', {
         method: 'POST',
@@ -206,29 +416,6 @@
 }
 
 </script>
-
-<!-- 
-
-        matematica_informe_2_1: document.querySelector(`input[name="matematica_2_1"]`).value || null,
-        matematica_informe_2_2: document.querySelector(`input[name="matematica_2_2"]`).value || null,
-        matematica_nota_final_2: document.querySelector(`input[name="matematica_2_final"]`).value || null,
-        matematica_anual: document.querySelector(`input[name="matematica_anual"]`).value || null,
-        matematica_rec_dic: document.querySelector(`input[name="matematica_rec_dic"]`).value || null,
-        matematica_rec_feb: document.querySelector(`input[name="matematica_rec_feb"]`).value || null,
-        matematica_final: document.querySelector(`input[name="matematica_final"]`).value || null,
-
-        ingles_informe_2_1: document.querySelector(`input[name="ingles_2_1"]`).value || null,
-        ingles_informe_2_2: document.querySelector(`input[name="ingles_2_2"]`).value || null,
-        ingles_nota_final_2: document.querySelector(`input[name="ingles_2_final"]`).value || null,
-        ingles_anual: document.querySelector(`input[name="ingles_anual"]`).value || null,
-        ingles_rec_dic: document.querySelector(`input[name="ingles_rec_dic"]`).value || null,
-        ingles_rec_feb: document.querySelector(`input[name="ingles_rec_feb"]`).value || null,
-        ingles_final: document.querySelector(`input[name="ingles_final"]`).value || null,
-
-    -->
-
-
-
 
     <script src="../js/index.js"></script>
     <script src="../js/generate-tables.js"></script>
